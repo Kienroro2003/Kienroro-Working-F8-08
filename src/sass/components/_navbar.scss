@@ -1,0 +1,10 @@
+.navbar {
+  &__item {
+    padding: 5px 15px;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
