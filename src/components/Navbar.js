@@ -1,23 +1,22 @@
 import React from "react";
-import { ReactComponent as ArrowDown } from "../assets/icons/arrow-down.svg";
+
+import DropdownMenu from "./DropdownMenu";
 
 const Navbar = (props) => {
   return (
     <nav className={`${props.className} navbar`}>
-      <ul className="navbar__list flex items-center">
+      <ul className="flex items-center navbar__list">
+        <li className="navbar__item">
+          <DropdownMenu data={props.data}></DropdownMenu>
+        </li>
         <li className="navbar__item">
           <a href="#!" className="navbar__link">
-            Departments <ArrowDown />
+            Grocery
           </a>
         </li>
         <li className="navbar__item">
           <a href="#!" className="navbar__link">
-            Grocery <ArrowDown />
-          </a>
-        </li>
-        <li className="navbar__item">
-          <a href="#!" className="navbar__link">
-            Beauty <ArrowDown />
+            Beauty
           </a>
         </li>
       </ul>

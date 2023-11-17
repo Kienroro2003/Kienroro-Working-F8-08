@@ -4,4 +4,9 @@ html {
   --text-color: #1a162e;
   --icon-color: brightness(0) saturate(100%) invert(7%) sepia(15%)
     saturate(3107%) hue-rotate(215deg) brightness(96%) contrast(95%);
+
+  //Header
+  --background-header: #eee;
+  --background-top-header__group: #fff;
+  --shadow-top-header__group: rgba(237, 237, 246, 0.2);
 }

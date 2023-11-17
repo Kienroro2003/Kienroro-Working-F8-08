@@ -1,0 +1,12 @@
+html.dark {
+  --background-color: #292e39;
+
+  --text-color: #fff;
+  --icon-color: brightness(0) saturate(100%) invert(99%) sepia(7%)
+    saturate(302%) hue-rotate(235deg) brightness(120%) contrast(100%);
+
+  //Header
+  --background-header: #171c28;
+  --background-top-header__group: #292e39;
+  --shadow-top-header__group: rgba(0, 0, 0, 0.2);
+}
