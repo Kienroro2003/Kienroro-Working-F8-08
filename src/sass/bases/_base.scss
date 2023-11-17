@@ -1,0 +1,52 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Gordita", sans-serif;
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+a,
+button,
+input,
+textarea,
+img,
+select {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input {
+  background-color: transparent;
+}
+
+.icon {
+  filter: var(--icon-color);
+}
