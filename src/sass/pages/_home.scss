@@ -1,0 +1,24 @@
+.home {
+  padding: 40px 0;
+
+  &__container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 40px;
+  }
+}
+
+.home-category {
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 141.667%;
+    margin-bottom: 20px;
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 51px;
+  }
+}

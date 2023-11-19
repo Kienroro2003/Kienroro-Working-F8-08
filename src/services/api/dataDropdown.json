@@ -252,10 +252,474 @@
   },
   {
     "id": 2,
-    "title": "Grocery"
+    "title": "Grocery",
+    "fields": [
+      {
+        "id": 1,
+        "title": "Grocery",
+        "main-icon": "../assets/icons/shapes/square.svg",
+        "sub-icon": "../assets/icons/categories/four-square.svg",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Shop All"
+          },
+          {
+            "id": 2,
+            "name": "Grilling Foods"
+          },
+          {
+            "id": 3,
+            "name": "Spring Flavors"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Fresh Produce",
+        "main-icon": "Square",
+        "sub-icon": "CupYoutube",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Shop All"
+          },
+          {
+            "id": 2,
+            "name": "Celebrate Salad Month"
+          },
+          {
+            "id": 3,
+            "name": "Healthy Living"
+          },
+          {
+            "id": 4,
+            "name": "Fresh Flowers"
+          },
+          {
+            "id": 5,
+            "name": "Chilled Dressing"
+          },
+          {
+            "id": 6,
+            "name": "Fresh Fruit"
+          },
+          {
+            "id": 7,
+            "name": "Salad Kits & Bowls"
+          },
+          {
+            "id": 8,
+            "name": "Organic Produce"
+          },
+          {
+            "id": 9,
+            "name": "Fresh Vegetables"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Bakery & Bread",
+        "main-icon": "Star",
+        "sub-icon": "CupYoutube",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Shop All"
+          },
+          {
+            "id": 2,
+            "name": "New in Bakery"
+          },
+          {
+            "id": 3,
+            "name": "Sliced Bread"
+          },
+          {
+            "id": 4,
+            "name": "Rolls & Buns"
+          },
+          {
+            "id": 5,
+            "name": "Tortillas"
+          },
+          {
+            "id": 6,
+            "name": "Breakfast Breads"
+          },
+          {
+            "id": 7,
+            "name": "Pies"
+          },
+          {
+            "id": 8,
+            "name": "Cookies & Brownies"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Frozen",
+        "main-icon": "Star",
+        "sub-icon": "CupYoutube",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Frozen Breakfast"
+          },
+          {
+            "id": 2,
+            "name": "Frozen Potatoes"
+          },
+          {
+            "id": 3,
+            "name": "Frozen Meals & Snacks"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Snacks",
+        "main-icon": "Moon",
+        "sub-icon": "Shield",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Shop All"
+          },
+          {
+            "id": 2,
+            "name": "Chips"
+          },
+          {
+            "id": 3,
+            "name": "Popcorn & Pretzels"
+          },
+          {
+            "id": 4,
+            "name": "Crackers"
+          },
+          {
+            "id": 5,
+            "name": "Salsa & Dips"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Candy",
+        "main-icon": "Hexagon",
+        "sub-icon": "Phone",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Shop All"
+          },
+          {
+            "id": 2,
+            "name": "Better for You"
+          },
+          {
+            "id": 3,
+            "name": "Chocolate"
+          },
+          {
+            "id": 4,
+            "name": "Sugar Free Candy"
+          },
+          {
+            "id": 5,
+            "name": "Gum"
+          },
+          {
+            "id": 6,
+            "name": "Mints"
+          },
+          {
+            "id": 7,
+            "name": "On-the-Go"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Cocktails & Mixes Coffee",
+        "main-icon": "Hexagon",
+        "sub-icon": "Phone",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Ground Coffee"
+          },
+          {
+            "id": 2,
+            "name": "Whole Bean Coffee"
+          },
+          {
+            "id": 3,
+            "name": "Coffee Pods"
+          },
+          {
+            "id": 4,
+            "name": "Instant Coffee"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Beverages",
+        "main-icon": "Hexagon",
+        "sub-icon": "Phone",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Shop All"
+          },
+          {
+            "id": 2,
+            "name": "Water"
+          },
+          {
+            "id": 3,
+            "name": "Soft Drinks"
+          },
+          {
+            "id": 4,
+            "name": "Fruit Juice"
+          },
+          {
+            "id": 5,
+            "name": "Sports Drinks"
+          },
+          {
+            "id": 6,
+            "name": "Energy Drinks"
+          },
+          {
+            "id": 7,
+            "name": "Tea"
+          },
+          {
+            "id": 7,
+            "name": "Hot Chocolate & Cocoa"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 3,
-    "title": "Beauty"
+    "title": "Beauty",
+    "fields": [
+      {
+        "id": 1,
+        "title": "Featured Shops",
+        "main-icon": "../assets/icons/shapes/square.svg",
+        "sub-icon": "../assets/icons/categories/four-square.svg",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Pickup Today in Beauty"
+          },
+          {
+            "id": 2,
+            "name": "BeautySpaceNK"
+          },
+          {
+            "id": 3,
+            "name": "Equate Beauty"
+          },
+          {
+            "id": 4,
+            "name": "Beauty Deals"
+          },
+          {
+            "id": 5,
+            "name": "Walmart Exclusives"
+          },
+          {
+            "id": 6,
+            "name": "Luxury Beauty Deals"
+          },
+          {
+            "id": 7,
+            "name": "New Arrivals"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Trending in Beauty",
+        "main-icon": "Square",
+        "sub-icon": "CupYoutube",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Trending Beauty Products"
+          },
+          {
+            "id": 2,
+            "name": "Celebrate Earth Day"
+          },
+          {
+            "id": 3,
+            "name": "Prom-ready Beauty"
+          },
+          {
+            "id": 4,
+            "name": "Summer Beauty"
+          },
+          {
+            "id": 5,
+            "name": "Travel Size & Minis"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Featured Brands",
+        "main-icon": "Star",
+        "sub-icon": "CupYoutube",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Shop All"
+          },
+          {
+            "id": 2,
+            "name": "New in Bakery"
+          },
+          {
+            "id": 3,
+            "name": "Sliced Bread"
+          },
+          {
+            "id": 4,
+            "name": "Rolls & Buns"
+          },
+          {
+            "id": 5,
+            "name": "Tortillas"
+          },
+          {
+            "id": 6,
+            "name": "Breakfast Breads"
+          },
+          {
+            "id": 7,
+            "name": "Pies"
+          },
+          {
+            "id": 8,
+            "name": "Cookies & Brownies"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Communities to Support",
+        "main-icon": "Star",
+        "sub-icon": "CupYoutube",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Black Owned Beauty"
+          },
+          {
+            "id": 2,
+            "name": "LatinX Owned Beauty"
+          },
+          {
+            "id": 3,
+            "name": "AAPI Owned Beauty"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Premium Beauty",
+        "main-icon": "Moon",
+        "sub-icon": "Shield",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Shop All"
+          },
+          {
+            "id": 2,
+            "name": "Hair Color"
+          },
+          {
+            "id": 3,
+            "name": "Hair Care"
+          },
+          {
+            "id": 4,
+            "name": "Skincare"
+          },
+          {
+            "id": 5,
+            "name": "Fragrance"
+          },
+          {
+            "id": 6,
+            "name": "Makeup"
+          },
+          {
+            "id": 7,
+            "name": "Beauty Tech & Tools"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Beauty",
+        "main-icon": "Hexagon",
+        "sub-icon": "Phone",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Shop All"
+          },
+          {
+            "id": 2,
+            "name": "Men's Grooming"
+          },
+          {
+            "id": 3,
+            "name": "Bath & Body"
+          },
+          {
+            "id": 4,
+            "name": "Beauty Tech & Tools"
+          },
+          {
+            "id": 5,
+            "name": "Makeup"
+          },
+          {
+            "id": 6,
+            "name": "Fragrance"
+          },
+          {
+            "id": 7,
+            "name": "Nail Care"
+          },
+          {
+            "id": 8,
+            "name": "Hair Care"
+          },
+          {
+            "id": 9,
+            "name": "Hair Color"
+          },
+          {
+            "id": 10,
+            "name": "Skin Care"
+          }
+        ]
+      }
+    ]
   }
 ]

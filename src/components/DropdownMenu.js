@@ -52,7 +52,7 @@ const DropdownMenu = (props) => {
                       <img
                         src={FourSquare}
                         alt=""
-                        className="dropdown-menu__item-icon"
+                        className="dropdown-menu__item-icon icon"
                       />
                     </div>
                     <div className="dropdown-menu__body">
