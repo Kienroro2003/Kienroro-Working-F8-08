@@ -11,7 +11,7 @@ const Filter = () => {
     <div class="filter-wrap" ref={nodeRef}>
       <button
         onClick={handleClickFilter}
-        class="filter-btn js-toggle"
+        class="filter-btn"
         toggle-target="#filter-home"
       >
         Filter

@@ -5,7 +5,7 @@ html {
   --icon-color: brightness(0) saturate(100%) invert(7%) sepia(15%)
     saturate(3107%) hue-rotate(215deg) brightness(96%) contrast(95%);
 
-  //Header
+  // Header
   --background-header: #eee;
   --background-top-header__group: #fff;
   --shadow-top-header__group: rgba(237, 237, 246, 0.2);
@@ -20,12 +20,21 @@ html {
   --bg-product: #eee;
   --bg-thumb: #fff;
 
-  //Product large
+  // Product large
   --bg-product-large: #fff;
   --shadow-product-large: rgba(237, 237, 246, 0.2);
   --shadow-icon-product-large: 0px 20px 60px rgba(124, 124, 124, 0.2);
 
-  //Filter buttons
+  // Filter buttons
   --filter-btn-bg: #fff;
   --filter-text-color: #6c6c72;
+
+  // Filter
+  --filter-bg: #fff;
+  --filter-box-shadow: rgba(200, 200, 200, 0.4);
+
+  // Form
+  --form-group-border: #d2d1d6;
+  --form-input-placeholder: #d2d1d6;
+  --form-text-color: #9e9da8;
 }
