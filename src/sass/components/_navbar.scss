@@ -1,7 +1,15 @@
 .navbar {
-  position: relative;
+  &__list {
+    display: flex;
+    align-items: center;
+  }
   &__item {
     padding: 5px 15px;
+
+    &:hover .dropdown-menu__container {
+      visibility: visible;
+      opacity: 1;
+    }
   }
   &__link {
     display: flex;

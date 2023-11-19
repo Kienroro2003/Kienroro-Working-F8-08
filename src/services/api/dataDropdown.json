@@ -1,0 +1,261 @@
+[
+  {
+    "id": 1,
+    "title": "Departments",
+    "fields": [
+      {
+        "id": 1,
+        "title": "All Departments",
+        "main-icon": "../assets/icons/shapes/square.svg",
+        "sub-icon": "../assets/icons/categories/four-square.svg",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Savings & Featured Shops"
+          },
+          {
+            "id": 2,
+            "name": "Electronics"
+          },
+          {
+            "id": 3,
+            "name": "Clothing, Shoes & Accessories"
+          },
+          {
+            "id": 4,
+            "name": "Home, Furniture & Appliances"
+          },
+          {
+            "id": 5,
+            "name": "Toys & Video Games"
+          },
+          {
+            "id": 6,
+            "name": "Home Improvement"
+          },
+          {
+            "id": 7,
+            "name": "Baby"
+          },
+          {
+            "id": 8,
+            "name": "Household Essentials"
+          },
+          {
+            "id": 9,
+            "name": "Personal Care"
+          },
+          {
+            "id": 10,
+            "name": "Patio & Garden"
+          },
+          {
+            "id": 11,
+            "name": "Sports & Outdoors"
+          },
+          {
+            "id": 12,
+            "name": "Gift Cards"
+          },
+          {
+            "id": 13,
+            "name": "Auto, Tires and Industrial"
+          },
+          {
+            "id": 12,
+            "name": "Auto, Tires and Industrial"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "TV & Video",
+        "main-icon": "Square",
+        "sub-icon": "CupYoutube",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Shop all TVs"
+          },
+          {
+            "id": 2,
+            "name": "TVs by Size"
+          },
+          {
+            "id": 3,
+            "name": "Smart TVs"
+          },
+          {
+            "id": 4,
+            "name": "Roku TVs"
+          },
+          {
+            "id": 5,
+            "name": "Streaming"
+          },
+          {
+            "id": 6,
+            "name": "TV Mounts & Accessories"
+          },
+          {
+            "id": 7,
+            "name": "DVD & Blu-Ray Players"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Wearable Technology",
+        "main-icon": "Star",
+        "sub-icon": "CupYoutube",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Galaxy Watch"
+          },
+          {
+            "id": 2,
+            "name": "Apple Watch"
+          },
+          {
+            "id": 3,
+            "name": "Fitness Trackers"
+          },
+          {
+            "id": 4,
+            "name": "Virtual Reality"
+          },
+          {
+            "id": 5,
+            "name": "Headphones"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Computers",
+        "main-icon": "Star",
+        "sub-icon": "CupYoutube",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Shop All Computers"
+          },
+          {
+            "id": 2,
+            "name": "Laptops"
+          },
+          {
+            "id": 3,
+            "name": "PC Gaming"
+          },
+          {
+            "id": 4,
+            "name": "Monitors"
+          },
+          {
+            "id": 5,
+            "name": "Chromebook"
+          },
+          {
+            "id": 6,
+            "name": "Printers & Ink"
+          },
+          {
+            "id": 7,
+            "name": "Shop all TVs"
+          },
+          {
+            "id": 8,
+            "name": "Computer Accessories"
+          },
+          {
+            "id": 9,
+            "name": "Desktops"
+          },
+
+          {
+            "id": 10,
+            "name": "Tax Software"
+          },
+          {
+            "id": 11,
+            "name": "Computer Software"
+          },
+          {
+            "id": 12,
+            "name": "PC Finder"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Savings",
+        "main-icon": "Moon",
+        "sub-icon": "Shield",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Tech Savings"
+          },
+          {
+            "id": 2,
+            "name": "Overstock Savings"
+          },
+          {
+            "id": 3,
+            "name": "Tech Rollbacks"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Cell Phones",
+        "main-icon": "Hexagon",
+        "sub-icon": "Phone",
+        "contents": [
+          {
+            "id": 1,
+            "name": "Wireless Deals"
+          },
+          {
+            "id": 2,
+            "name": "5G Phones"
+          },
+          {
+            "id": 3,
+            "name": "Prepaid Phones & Plans"
+          },
+          {
+            "id": 4,
+            "name": "Refurbished Phones"
+          },
+          {
+            "id": 5,
+            "name": "iPhone Accessories"
+          },
+          {
+            "id": 6,
+            "name": "Cases & Screen Protectors"
+          },
+          {
+            "id": 7,
+            "name": "Walmart Protection Plan"
+          },
+          {
+            "id": 8,
+            "name": "Unlocked Phones"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Grocery"
+  },
+  {
+    "id": 3,
+    "title": "Beauty"
+  }
+]

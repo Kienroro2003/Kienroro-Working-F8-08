@@ -5,7 +5,10 @@
   background-color: var(--background-header);
 
   &__container {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    position: relative;
     @include abstracts.screen(lg) {
       padding: 0 20px;
     }
@@ -55,13 +58,22 @@
 
   &__input {
     width: 0;
+    transition: all 0.2s linear;
 
     &.show {
       width: 200px;
       padding-left: 50px;
     }
   }
+
+  &__form {
+    position: relative;
+    gap: 0;
+  }
   &__search {
+    position: absolute;
     padding: 14px;
+    top: 0;
+    left: 0;
   }
 }

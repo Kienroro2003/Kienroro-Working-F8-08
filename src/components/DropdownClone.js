@@ -20,7 +20,10 @@ const DropdownClone = (props) => {
           <li className="flex gap-4 dropdown-menu__item main">
             <div className="dropdown-menu__item-field">
               <div className="dropdown-menu__item-icons">
-                <img src={Circle} alt="" />
+                <img
+                  src={require("../assets/icons/shapes/circle.svg").default}
+                  alt=""
+                />
                 <img
                   src={FourSquare}
                   alt=""

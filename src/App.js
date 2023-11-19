@@ -1,5 +1,8 @@
+import useDynamicSVGImport from "./hooks/useDynamicSVGImport";
 import Header from "./pages/Header";
 import "./sass/index.scss";
+
+
 
 function App() {
   return (
