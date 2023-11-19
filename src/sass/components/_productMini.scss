@@ -1,26 +1,47 @@
+@use "../abstracts";
+
 .product-mini {
   border-radius: 16px;
-  background: #eee;
+  background: var(--bg-product);
   padding: 20px 26px 20px 20px;
   display: flex;
   align-items: center;
   gap: 20px;
+  @include abstracts.screen(xl) {
+    flex-direction: column;
+  }
+  @include abstracts.screen(md) {
+    flex-direction: row;
+  }
   &__thumb {
     width: 116px;
     height: 116px;
     border-radius: 8px;
-    background: #fff;
+    background: var(--bg-thumb);
+    object-fit: contain;
+    @include abstracts.screen(xl) {
+      width: 100%;
+      flex-direction: column;
+    }
+    @include abstracts.screen(md) {
+      width: 88px;
+      height: 88px;
+    }
   }
   &__title {
-    color: #000;
     font-size: 2.2rem;
     font-weight: 700;
     line-height: 145.455%;
     margin-bottom: 6px;
+    @include abstracts.screen(md) {
+      font-size: 1.8rem;
+    }
   }
   &__desc {
-    color: var(--secondary-color-secondary-1, #1a162e);
     font-size: 1.6rem;
     line-height: 150%;
+    @include abstracts.screen(md) {
+      font-size: 1.4rem;
+    }
   }
 }

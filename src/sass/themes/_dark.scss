@@ -15,4 +15,13 @@ html.dark {
   --color-dropdown: #b9babe;
   --shadow-dropdown: rgba(23, 28, 40, 0.4);
   --hover-text-color: #0071dc;
+
+  // Product mini
+  --bg-product: #171c28;
+  --bg-thumb: #292e39;
+
+  //Product large
+  --bg-product-large: #171c28;
+  --shadow-product-large: rgba(0, 0, 0, 0.2);
+  --shadow-icon-product-large: 0px 20px 60px rgba(124, 124, 124, 0.2);
 }

@@ -1,3 +1,4 @@
+@use "../abstracts";
 .home {
   padding: 40px 0;
 
@@ -8,17 +9,42 @@
   }
 }
 
-.home-category {
+.home-section {
   &__heading {
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 141.667%;
     margin-bottom: 20px;
   }
+}
+
+.home-category {
   &__list {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 51px;
+    @include abstracts.screen(lg) {
+      gap: 20px;
+    }
+    @include abstracts.screen(md) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}
+
+.product-large {
+  &__list {
+    --cols: 4;
+    display: grid;
+    grid-template-columns: repeat(var(--cols), 1fr);
+    gap: 30px;
+    @include abstracts.screen(lg) {
+      --cols: 2;
+    }
+    @include abstracts.screen(md) {
+      --cols: 1;
+    }
   }
 }
