@@ -1,9 +1,14 @@
 @use "../abstracts";
-.sign-in {
+.sign-action {
   background-color: var(--bg-sign-in);
   &__container {
     min-height: 100vh;
     display: flex;
+    &.sign-up {
+      @include abstracts.screen(md) {
+        position: relative;
+      }
+    }
   }
   &__left,
   &__right {
@@ -15,14 +20,32 @@
     padding: 20px;
   }
 
-  &__right {
-    @include abstracts.screen(md) {
-      width: 100%;
+  &__left {
+    &.sign-up {
+      @include abstracts.screen(md) {
+        width: 100%;
+      }
     }
   }
 
-  &__left {
+  &__right {
     background: var(--bg-sign-in__block);
+    @include abstracts.screen(md) {
+      width: 100%;
+    }
+    &.sign-up {
+      @include abstracts.screen(md) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        translate: 100%;
+        transition: translate 0.2s linear;
+        z-index: 10;
+        &.show {
+          translate: 0;
+        }
+      }
+    }
   }
 
   &__content {
@@ -81,5 +104,25 @@
 
     font-weight: 500;
     line-height: 144.444%;
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    translate: -50%;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  &__circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ededf6;
+    &.active {
+      background-color: #b9babe;
+    }
   }
 }
