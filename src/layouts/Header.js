@@ -31,6 +31,7 @@ const Header = () => {
               <input
                 type="text"
                 className={`top-act__input ${show ? "show" : ""}`}
+                placeholder="Search"
               />
               <button
                 className="top-act__btn top-act__search"

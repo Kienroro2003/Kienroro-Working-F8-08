@@ -150,7 +150,8 @@ const Filter = () => {
           <div class="filter__row filter__footer">
             <button
               class="btn btn--text filter__cancel js-toggle"
-              toggle-target="#filter-home"
+              type="button"
+              onClick={handleClickFilter}
             >
               Cancel
             </button>

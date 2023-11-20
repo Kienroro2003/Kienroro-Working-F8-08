@@ -7,14 +7,25 @@ const ProductLarge = () => {
   return (
     <div className="product-large">
       <div className="product-large__block">
-        <img src={Product} alt="Product Large" className="product-large__img" />
-        <div className="product-large__icon">
-          <Heart className="icon"></Heart>
-        </div>
+        <a href="#!" className="product-large__link">
+          <img
+            src={Product}
+            alt="Product Large"
+            className="product-large__img"
+          />
+        </a>
+
+        <button>
+          <div className="product-large__icon">
+            <Heart className="icon"></Heart>
+          </div>
+        </button>
       </div>
       <div className="product-large__content">
         <h3 className="product-large__heading">
-          Coffee Beans - Espresso Arabica and Robusta Beans
+          <a href="#!" className="product-large__link">
+            Coffee Beans - Espresso Arabica and Robusta Beans
+          </a>
         </h3>
         <div className="product-large__brand">Lavazza</div>
         <div className="flex justify-between">
