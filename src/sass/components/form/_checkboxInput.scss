@@ -1,5 +1,9 @@
 .custom-checkbox input:checked + div .custom-checkbox-square {
   background-color: #9e9da8;
+  * {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 // .custom-checkbox {
@@ -12,6 +16,12 @@
   height: 20px;
   border: 1.5px solid #9e9da8;
   border-radius: 7px;
+  transition: background-color 0.2s linear;
+  * {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility, opacity 0.2s linear;
+  }
 }
 
 .checkbox__label {

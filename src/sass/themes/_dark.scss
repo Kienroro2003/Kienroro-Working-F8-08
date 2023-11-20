@@ -10,6 +10,11 @@ html.dark {
   --background-top-header__group: #292e39;
   --shadow-top-header__group: rgba(0, 0, 0, 0.2);
 
+  // Btn
+  --btn-google: #b9babe;
+  --icon--google: brightness(0) saturate(100%) invert(85%) sepia(3%)
+    saturate(309%) hue-rotate(191deg) brightness(88%) contrast(88%);
+
   // Dropdown
   --bg-dropdown: #292e39;
   --color-dropdown: #b9babe;
@@ -37,4 +42,9 @@ html.dark {
   --form-group-border: #d2d1d6;
   --form-input-placeholder: #9e9da8;
   --form-text-color: #9e9da8;
+
+  //sign in
+  --bg-sign-in: #292e39;
+  --bg-sign-in__block: #171c28;
+  --color-sign-in__greeting: #9e9da8;
 }

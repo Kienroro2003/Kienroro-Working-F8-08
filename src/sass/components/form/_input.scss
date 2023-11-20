@@ -1,5 +1,6 @@
 .input {
   &__group {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,6 +16,7 @@
     font-weight: 500;
     line-height: 144.444%;
     border: 1px solid var(--secondary-color-secondary-3, #d2d1d6);
+    box-shadow: inset;
     &::placeholder {
       color: var(--secondary-color-secondary-3, #d2d1d6);
     }

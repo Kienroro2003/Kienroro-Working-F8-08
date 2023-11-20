@@ -10,7 +10,7 @@ const SignIn = () => {
   return (
     <div className="sign-in">
       <div className="sign-in__container">
-        <div className="sign-in__left">
+        <div className="sign-in__left d-md-none">
           <div className="sign-in__block">
             <img src={Block} alt="block" className="sign-in__img" />
             <p className="sign-in__desc">
@@ -40,7 +40,7 @@ const SignIn = () => {
                 id="password"
                 placeholder="Password"
               ></Input>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between w-full">
                 <CheckboxInput
                   name="terms"
                   label="Set as default card"
@@ -57,6 +57,12 @@ const SignIn = () => {
                   style={{ heigh: "50px" }}
                 ></Button>
               </div>
+              <span className="flex gap-1">
+                Don’t have an account yet?
+                <a href="#!" className="link">
+                  Sign Up
+                </a>
+              </span>
             </form>
           </div>
         </div>

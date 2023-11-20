@@ -10,7 +10,7 @@ const Input = (props) => {
         {props.type === "password" ? (
           <img src={Lock} alt="lock" />
         ) : (
-          <img src={Message} alt="lock" />
+          <img src={Message} alt="message" />
         )}
       </button>
     </div>

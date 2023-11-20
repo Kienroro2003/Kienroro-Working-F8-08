@@ -99,9 +99,14 @@
   }
 
   &--google {
+    color: var(--btn-google);
     display: flex;
     align-items: center;
     gap: 10px;
     justify-content: center;
+
+    .icon--google {
+      filter: var(--icon--google);
+    }
   }
 }

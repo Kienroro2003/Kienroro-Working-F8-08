@@ -10,7 +10,7 @@ const Button = (props) => {
       }`}
       style={props.style}
     >
-      {props.google && <img src={Google} alt="" />}
+      {props.google && <img src={Google} alt="" className="icon--google" />}
       {props.text}
     </button>
   );
