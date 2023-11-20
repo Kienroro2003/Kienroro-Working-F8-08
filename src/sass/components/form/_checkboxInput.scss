@@ -1,0 +1,22 @@
+.custom-checkbox input:checked + div .custom-checkbox-square {
+  background-color: #9e9da8;
+}
+
+// .custom-checkbox {
+//   display: block;
+//   width: 20px;
+//   height: 20px;
+// }
+.custom-checkbox-square {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #9e9da8;
+  border-radius: 7px;
+}
+
+.checkbox__label {
+  color: var(--secondary-color-secondary-2, #9e9da8);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}

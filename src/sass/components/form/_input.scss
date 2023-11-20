@@ -1,0 +1,33 @@
+.input {
+  &__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  &__field {
+    width: 100%;
+    padding: 12px 38px 12px 12px;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 144.444%;
+    border: 1px solid var(--secondary-color-secondary-3, #d2d1d6);
+    &::placeholder {
+      color: var(--secondary-color-secondary-3, #d2d1d6);
+    }
+
+    &:focus {
+      border-color: var(--text-color);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    translate: 0 -50%;
+  }
+}

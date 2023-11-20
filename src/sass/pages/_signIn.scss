@@ -1,0 +1,73 @@
+.sign-in {
+  background-color: #fff;
+  &__container {
+    min-height: 100vh;
+    display: flex;
+  }
+  &__left,
+  &__right {
+    width: 50%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  &__left {
+    background: #fafafd;
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 460px;
+  }
+
+  &__form {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+  }
+
+  &__form-action {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__heading {
+    margin-top: 50px;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 146.667%;
+  }
+
+  &__greeting {
+    margin-top: 10px;
+    color: var(--secondary-color-secondary-2, #9e9da8);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 146.667%;
+    text-align: center;
+  }
+
+  &__block {
+    width: 422px;
+    text-align: center;
+  }
+
+  &__img {
+    margin-bottom: 50px;
+  }
+  &__desc {
+    font-size: 1.8rem;
+
+    font-weight: 500;
+    line-height: 144.444%;
+  }
+}

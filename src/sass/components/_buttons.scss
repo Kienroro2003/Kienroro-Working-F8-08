@@ -53,26 +53,26 @@
 
 // Buttons
 .btn {
-  display: flex;
-  align-items: center;
-  height: 46px;
-  padding: 0 20px;
+  display: block;
+  width: 100%;
+  padding: 12px;
   border-radius: 6px;
 
   background: #f8f8fb;
 
   font-size: 1.8rem;
   font-weight: 500;
+  line-height: 144.444%;
   user-select: none;
-
-  // + .btn {
-  //   margin-left: 20px;
-  // }
 
   &--text {
     color: #9e9da8;
     background: transparent;
     font-weight: 400;
+  }
+
+  &--action {
+    color: #1a162e;
   }
 
   &--primary {
@@ -96,5 +96,12 @@
 
   &:hover {
     opacity: 0.9;
+  }
+
+  &--google {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
   }
 }
