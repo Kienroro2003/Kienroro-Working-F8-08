@@ -2,7 +2,6 @@ import React from "react";
 import Input from "../components/input/Input";
 import Block from "../assets/images/block.png";
 import Logo from "../components/Logo";
-import CheckboxInput from "../components/checkbox/CheckboxInput";
 import Button from "../components/buttons/Button";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -64,6 +63,7 @@ const SignIn = () => {
             <form
               className="sign-action__form"
               onSubmit={handleSubmit(onSubmit)}
+              autoComplete="off"
             >
               <Input
                 control={control}

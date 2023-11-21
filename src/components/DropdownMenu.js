@@ -1,36 +1,16 @@
+// import Square from "../assets/icons/shapes/square.svg";
+// import Rectange from "../assets/icons/shapes/rectange.svg";
+// import Moon from "../assets/icons/shapes/moon.svg";
+// import Hexagon from "../assets/icons/shapes/hexagon.svg";
+// import Camputer from "../assets/icons/categories/compute.svg";
+// import Phone from "../assets/icons/categories/phone.svg";
+// import Shield from "../assets/icons/categories/shield.svg";
+// import Star from "../assets/icons/shapes/star.svg";
+// import CupYoutube from "../assets/icons/categories/cup-youtube.svg";
 import React, { Fragment, useEffect, useRef } from "react";
-import Square from "../assets/icons/shapes/square.svg";
 import Circle from "../assets/icons/shapes/circle.svg";
-import Rectange from "../assets/icons/shapes/rectange.svg";
-import Moon from "../assets/icons/shapes/moon.svg";
-import Hexagon from "../assets/icons/shapes/hexagon.svg";
-import Camputer from "../assets/icons/categories/compute.svg";
-import Star from "../assets/icons/shapes/star.svg";
-import CupYoutube from "../assets/icons/categories/cup-youtube.svg";
 import FourSquare from "../assets/icons/categories/four-square.svg";
-import Phone from "../assets/icons/categories/phone.svg";
-import Shield from "../assets/icons/categories/shield.svg";
-import useDynamicSVGImport from "../hooks/useDynamicSVGImport";
 import DropdownSubmenu from "./DropdownSubmenu";
-
-const Icon = ({ name, onCompleted, onError, ...rest }) => {
-  const { error, loading, SvgIcon } = useDynamicSVGImport(name, {
-    onCompleted,
-    onError,
-  });
-  if (error) {
-    console.log("🚀 ~ file: App.js:11 ~ Icon ~ error:", error);
-
-    return error.message;
-  }
-  if (loading) {
-    return "Loading...";
-  }
-  if (SvgIcon) {
-    return <SvgIcon {...rest} />;
-  }
-  return null;
-};
 
 const DropdownMenu = (props) => {
   return (

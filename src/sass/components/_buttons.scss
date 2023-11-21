@@ -53,8 +53,10 @@
 
 // Buttons
 .btn {
+  text-wrap: nowrap;
   display: block;
   width: 100%;
+  min-width: 100px;
   padding: 12px;
   border-radius: 6px;
 

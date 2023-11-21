@@ -6,8 +6,10 @@ import { ReactComponent as Heart } from "../assets/icons/heart.svg";
 import { ReactComponent as More } from "../assets/icons/more.svg";
 import Avatar from "../assets/images/avatar.jpeg";
 import useClickOutSide from "../hooks/useClickOutSide";
+import { useState } from "react";
 
 const Header = () => {
+  const [logged, setLogged] = useState(false);
   const data = require("../services/api/dataDropdown.json");
   const { nodeRef, show, setShow } = useClickOutSide();
   const handleShowInput = (e) => {
@@ -40,20 +42,33 @@ const Header = () => {
                 <Search className="icon"></Search>
               </button>
             </form>
-            <div className="top-act__group d-lg-none ">
-              <button className="top-act__btn">
-                <Heart className="icon"></Heart>
-                <span>03</span>
-              </button>
-              <div class="h-full w-[1px] bg-[#EDEDF6]"></div>
-              <button className="top-act__btn">
-                <Cart className="icon"></Cart>
-                <span>$65.42</span>
-              </button>
-            </div>
-            <div class="top-act__user">
-              <img src={Avatar} alt="Avatar" class="top-act__avatar" />
-            </div>
+            {logged ? (
+              <>
+                <div className="top-act__group d-lg-none ">
+                  <button className="top-act__btn">
+                    <Heart className="icon"></Heart>
+                    <span>03</span>
+                  </button>
+                  <div class="h-full w-[1px] bg-[#EDEDF6]"></div>
+                  <button className="top-act__btn">
+                    <Cart className="icon"></Cart>
+                    <span>$65.42</span>
+                  </button>
+                </div>
+                <div class="top-act__user">
+                  <img src={Avatar} alt="Avatar" class="top-act__avatar" />
+                </div>
+              </>
+            ) : (
+              <div className="flex items-center gap-2">
+                <button className=" btn btn--outline d-md-none">
+                  <button>Sign Up</button>
+                </button>
+                <button className=" btn btn--primary">
+                  <button>Sign In</button>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

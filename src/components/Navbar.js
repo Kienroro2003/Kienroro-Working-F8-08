@@ -1,7 +1,6 @@
 import React from "react";
 
 import DropdownMenu from "./DropdownMenu";
-import DropdownClone from "./DropdownClone";
 import { ReactComponent as ArrowDown } from "../assets/icons/arrow-down.svg";
 
 const Navbar = (props) => {

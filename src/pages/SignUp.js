@@ -128,8 +128,8 @@ const SignUp = () => {
               </div>
               <span className="flex gap-1">
                 Don’t have an account yet?
-                <a href="#!" className="link">
-                  Sign Up
+                <a href="/sign-in" className="link">
+                  Sign In
                 </a>
               </span>
             </form>
