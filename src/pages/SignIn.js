@@ -4,8 +4,43 @@ import Block from "../assets/images/block.png";
 import Logo from "../components/Logo";
 import CheckboxInput from "../components/checkbox/CheckboxInput";
 import Button from "../components/buttons/Button";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
 
+const schema = yup
+  .object({
+    email: yup
+      .string()
+      .email("Invalid email format")
+      .required("Must be required"),
+    password: yup
+      .string()
+      .matches(
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+        "Minimum eight characters, at least one letter, one number and one special character"
+      )
+      .required("Must be required"),
+  })
+  .required();
 const SignIn = () => {
+  const {
+    control,
+    handleSubmit,
+    formState: { isValid },
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = (data) => {
+    if (isValid) {
+      console.log(data);
+    }
+  };
   return (
     <div className="sign-action">
       <div className="sign-action__container">
@@ -23,31 +58,27 @@ const SignIn = () => {
             <Logo></Logo>
             <h1 className="sign-action__heading">Sign In</h1>
             <p className="sign-action__greeting">
-              Welcome back to sign in. As a returning customer, you have access
-              to your previously saved all information.
+              Welcome to sign in. As a returning customer, you have access to
+              your previously saved all information.
             </p>
-            <form className="sign-action__form">
+            <form
+              className="sign-action__form"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <Input
+                control={control}
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Email"
               ></Input>
               <Input
+                control={control}
                 type="password"
                 name="password"
                 id="password"
                 placeholder="Password"
               ></Input>
-              <div className="flex items-center justify-between w-full">
-                <CheckboxInput
-                  name="terms"
-                  label="Set as default card"
-                ></CheckboxInput>
-                <a href="#!" className="link forgot__account">
-                  Recovery Password
-                </a>
-              </div>
               <div className="sign-action__form-action">
                 <Button primary text="Login" style={{ heigh: "50px" }}></Button>
                 <Button
@@ -58,7 +89,7 @@ const SignIn = () => {
               </div>
               <span className="flex gap-1">
                 Don’t have an account yet?
-                <a href="#!" className="link">
+                <a href="/sign-up" className="link">
                   Sign Up
                 </a>
               </span>

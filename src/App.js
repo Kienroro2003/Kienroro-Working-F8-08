@@ -5,16 +5,34 @@ import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import "./sass/index.scss";
 import SignUp from "./pages/SignUp";
+import { Routes, Route } from "react-router-dom";
+import { routers } from "./routes";
+import Layout from "./layouts/Layout";
+import { Fragment } from "react";
 
 function App() {
   return (
-    <div className="App">
-      {/* <Header></Header>
-      <Home></Home>
-      <Footer></Footer> */}
-      {/* <SignIn></SignIn> */}
-      <SignUp></SignUp>
-    </div>
+    <Routes>
+      {routers.map((route, index) => {
+        const Page = route.component;
+
+        let LayoutDynamic = Layout;
+        if (route.layout) LayoutDynamic = route.layout;
+        else if (route.layout === null) LayoutDynamic = Fragment;
+
+        return (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <LayoutDynamic>
+                <Page />
+              </LayoutDynamic>
+            }
+          />
+        );
+      })}
+    </Routes>
   );
 }
 
