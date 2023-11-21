@@ -24,20 +24,14 @@
 
   &__item {
     display: flex;
-    gap: 20px;
-    flex-shrink: 0;
-    flex-grow: 0;
-    &-icons {
-      position: relative;
-    }
     &-icon {
       position: absolute;
       right: 0;
-      top: 0;
-      translate: 32% 80%;
+      bottom: 0;
+      translate: 20% 50%;
     }
-    &.main {
-      // border-right: 1px solid #d2d1d6;
+    &-block {
+      position: relative;
     }
   }
 

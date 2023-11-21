@@ -258,7 +258,7 @@
         "id": 1,
         "title": "Grocery",
         "main-icon": "assets/icons/shapes/square.svg",
-        "sub-icon": "assets/icons/categories/four-square.svg",
+        "sub-icon": "assets/icons/categories/cart.svg",
         "contents": [
           {
             "id": 1,
@@ -277,8 +277,8 @@
       {
         "id": 2,
         "title": "Fresh Produce",
-        "main-icon": "assets/icons/shapes/square.svg",
-        "sub-icon": "assets/icons/categories/cup-youtube.svg",
+        "main-icon": "assets/icons/shapes/star-2.svg",
+        "sub-icon": "assets/icons/categories/orange.svg",
         "contents": [
           {
             "id": 1,
@@ -321,8 +321,8 @@
       {
         "id": 3,
         "title": "Bakery & Bread",
-        "main-icon": "assets/icons/shapes/star.svg",
-        "sub-icon": "assets/icons/categories/cup-youtube.svg",
+        "main-icon": "assets/icons/shapes/rectangle-blue.svg",
+        "sub-icon": "assets/icons/categories/bread.svg",
         "contents": [
           {
             "id": 1,
@@ -381,8 +381,8 @@
       {
         "id": 5,
         "title": "Snacks",
-        "main-icon": "assets/icons/shapes/moon.svg",
-        "sub-icon": "assets/icons/categories/shield.svg",
+        "main-icon": "assets/icons/shapes/part-circle.svg",
+        "sub-icon": "assets/icons/categories/drink-food.svg",
         "contents": [
           {
             "id": 1,
@@ -409,8 +409,8 @@
       {
         "id": 6,
         "title": "Candy",
-        "main-icon": "Hexagon",
-        "sub-icon": "Phone",
+        "main-icon": "assets/icons/shapes/octagon.svg",
+        "sub-icon": "assets/icons/categories/candy.svg",
         "contents": [
           {
             "id": 1,
@@ -445,8 +445,8 @@
       {
         "id": 7,
         "title": "Cocktails & Mixes Coffee",
-        "main-icon": "assets/icons/shapes/hexagon.svg",
-        "sub-icon": "assets/icons/categories/phone.svg",
+        "main-icon": "assets/icons/shapes/moon-2.svg",
+        "sub-icon": "assets/icons/categories/coffee.svg",
         "contents": [
           {
             "id": 1,
@@ -469,8 +469,8 @@
       {
         "id": 8,
         "title": "Beverages",
-        "main-icon": "assets/icons/shapes/hexagon.svg",
-        "sub-icon": "assets/icons/categories/phone.svg",
+        "main-icon": "assets/icons/shapes/hexagon-green.svg",
+        "sub-icon": "assets/icons/categories/beverage.svg",
         "contents": [
           {
             "id": 1,
@@ -516,7 +516,7 @@
         "id": 1,
         "title": "Featured Shops",
         "main-icon": "assets/icons/shapes/circle.svg",
-        "sub-icon": "assets/icons/categories/four-square.svg",
+        "sub-icon": "assets/icons/categories/cart.svg",
         "contents": [
           {
             "id": 1,
@@ -551,8 +551,8 @@
       {
         "id": 2,
         "title": "Trending in Beauty",
-        "main-icon": "assets/icons/shapes/square.svg",
-        "sub-icon": "assets/icons/categories/cup-youtube.svg",
+        "main-icon": "assets/icons/shapes/triangle.svg",
+        "sub-icon": "assets/icons/categories/beauty.svg",
         "contents": [
           {
             "id": 1,
@@ -579,8 +579,8 @@
       {
         "id": 3,
         "title": "Featured Brands",
-        "main-icon": "assets/icons/shapes/star.svg",
-        "sub-icon": "assets/icons/categories/cup-youtube.svg",
+        "main-icon": "assets/icons/shapes/pentagon.svg",
+        "sub-icon": "assets/icons/categories/star.svg",
         "contents": [
           {
             "id": 1,
@@ -619,8 +619,8 @@
       {
         "id": 4,
         "title": "Communities to Support",
-        "main-icon": "assets/icons/shapes/star.svg",
-        "sub-icon": "assets/icons/categories/cup-youtube.svg",
+        "main-icon": "assets/icons/shapes/rectangle-90.svg",
+        "sub-icon": "assets/icons/categories/breakfast.svg",
         "contents": [
           {
             "id": 1,
@@ -639,8 +639,8 @@
       {
         "id": 5,
         "title": "Premium Beauty",
-        "main-icon": "assets/icons/shapes/moon.svg",
-        "sub-icon": "assets/icons/categories/shield.svg",
+        "main-icon": "assets/icons/shapes/hexagon-green.svg",
+        "sub-icon": "assets/icons/categories/premium.svg",
         "contents": [
           {
             "id": 1,
@@ -675,8 +675,8 @@
       {
         "id": 6,
         "title": "Beauty",
-        "main-icon": "assets/icons/shapes/hexagon.svg",
-        "sub-icon": "assets/icons/categories/phone.svg",
+        "main-icon": "assets/icons/shapes/moon-3.svg",
+        "sub-icon": "assets/icons/categories/face.svg",
         "contents": [
           {
             "id": 1,
