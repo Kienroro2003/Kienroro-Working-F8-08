@@ -2,13 +2,20 @@
   &__group {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
     border-radius: 10px;
-    position: relative;
   }
 
   &__field {
+    position: relative;
+  }
+
+  &__error {
+    padding-left: 10px;
+  }
+
+  &__text {
     width: 100%;
     padding: 12px 38px 12px 12px;
     border-radius: 10px;

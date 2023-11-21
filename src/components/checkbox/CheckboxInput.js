@@ -1,13 +1,23 @@
 import React from "react";
+import { useController } from "react-hook-form";
 
-const CheckboxInput = (props) => {
+const CheckboxInput = ({ control, label, ...props }) => {
+  const {
+    field,
+    formState: { errors },
+  } = useController({
+    name: props.name,
+    control,
+    defaultValue: false,
+  });
   return (
     <label className="cursor-pointer custom-checkbox">
       <input
         type="checkbox"
-        value={props.value}
-        className="hidden"
         id={props.name}
+        {...field}
+        {...props}
+        checked={field.value}
         hidden
       />
       <div className="flex items-center gap-x-3">
@@ -29,9 +39,12 @@ const CheckboxInput = (props) => {
           htmlFor={props.name}
           className="text-sm cursor-pointer checkbox__label"
         >
-          {props.label}
+          {label}
         </label>
       </div>
+      {errors && errors?.[props.name] && (
+        <p className="checkbox__error error">{errors[props.name].message}</p>
+      )}
     </label>
   );
 };

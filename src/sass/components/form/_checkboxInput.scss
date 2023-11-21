@@ -24,9 +24,14 @@
   }
 }
 
-.checkbox__label {
-  color: var(--secondary-color-secondary-2, #9e9da8);
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 146.667%;
+.checkbox {
+  &__label {
+    color: var(--secondary-color-secondary-2, #9e9da8);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 146.667%;
+  }
+
+  &__error {
+  }
 }

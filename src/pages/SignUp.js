@@ -5,12 +5,57 @@ import Logo from "../components/Logo";
 import CheckboxInput from "../components/checkbox/CheckboxInput";
 import Button from "../components/buttons/Button";
 import ArrowNext from "../assets/icons/arrow-next.svg";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup
+  .object({
+    email: yup
+      .string()
+      .email("Invalid email format")
+      .required("Must be required"),
+    password: yup
+      .string()
+      .matches(
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+        "Minimum eight characters, at least one letter, one number and one special character"
+      )
+      .required("Must be required"),
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref("password")], "Passwords must match"),
+    terms: yup.bool().oneOf([true], "Must be checked"),
+  })
+  .required();
 
 const SignUp = () => {
   const [next, setNext] = useState(false);
   const handleClickNext = () => {
     setNext(true);
   };
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { isValid },
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      email: "",
+      password: "",
+      confirmPassword: "",
+      terms: false,
+    },
+  });
+  const onSubmit = (data) => {
+    if (isValid) {
+      console.log(data);
+    }
+    reset();
+  };
+  // console.log(control);
+  // console.log(errors);
   return (
     <div className="sign-action">
       <div className="sign-action__container sign-up">
@@ -38,27 +83,34 @@ const SignUp = () => {
             <p className="sign-action__greeting">
               Let’s create your account and Shop like a pro and save money.
             </p>
-            <form className="sign-action__form">
+            <form
+              className="sign-action__form"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <Input
+                control={control}
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Email"
               ></Input>
               <Input
+                control={control}
                 type="password"
                 name="password"
                 id="password"
                 placeholder="Password"
               ></Input>
               <Input
+                control={control}
                 type="password"
-                name="confirm-password"
-                id="confirm-password"
+                name="confirmPassword"
+                id="confirmPassword"
                 placeholder="Confirm Password"
               ></Input>
               <div className="flex items-center justify-between w-full">
                 <CheckboxInput
+                  control={control}
                   name="terms"
                   label="Set as default card"
                 ></CheckboxInput>
