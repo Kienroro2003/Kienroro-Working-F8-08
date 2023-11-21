@@ -7,6 +7,7 @@ import Button from "../components/buttons/Button";
 import ArrowNext from "../assets/icons/arrow-next.svg";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
 const schema = yup
@@ -30,6 +31,7 @@ const schema = yup
   .required();
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [next, setNext] = useState(false);
   const handleClickNext = () => {
     setNext(true);
@@ -50,7 +52,7 @@ const SignUp = () => {
   });
   const onSubmit = (data) => {
     if (isValid) {
-      console.log(data);
+      navigate("/sign-in");
     }
     reset();
   };
@@ -119,7 +121,11 @@ const SignUp = () => {
                 </a>
               </div>
               <div className="sign-action__form-action">
-                <Button primary text="Login" style={{ heigh: "50px" }}></Button>
+                <Button
+                  primary
+                  text="Sign Up"
+                  style={{ heigh: "50px" }}
+                ></Button>
                 <Button
                   google
                   text="Sign in with Gmail"

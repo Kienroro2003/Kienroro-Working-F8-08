@@ -4,6 +4,7 @@ import Block from "../assets/images/block.png";
 import Logo from "../components/Logo";
 import Button from "../components/buttons/Button";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 
@@ -23,6 +24,7 @@ const schema = yup
   })
   .required();
 const SignIn = () => {
+  const navigate = useNavigate();
   const {
     control,
     handleSubmit,
@@ -38,7 +40,7 @@ const SignIn = () => {
   const onSubmit = (data) => {
     if (isValid) {
       console.log(data);
-      window.location.href = "/";
+      navigate("/");
     }
   };
   return (
