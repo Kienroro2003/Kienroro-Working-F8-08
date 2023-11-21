@@ -38,6 +38,7 @@ const SignIn = () => {
   const onSubmit = (data) => {
     if (isValid) {
       console.log(data);
+      window.location.href = "/";
     }
   };
   return (

@@ -1,4 +1,4 @@
-// import Square from "../assets/icons/shapes/square.svg";
+import Square from "../assets/icons/shapes/square.svg";
 // import Rectange from "../assets/icons/shapes/rectange.svg";
 // import Moon from "../assets/icons/shapes/moon.svg";
 // import Hexagon from "../assets/icons/shapes/hexagon.svg";
@@ -19,7 +19,12 @@ const DropdownMenu = (props) => {
         <ul className="dropdown-menu">
           {props.data &&
             props.data.map((item) => {
-              console.log(props.data);
+              // let mainIcon = require(item["main-icon"]);
+              // console.log(
+              //   "🚀 ~ file: DropdownMenu.js:23 ~ DropdownMenu ~ mainIcon:",
+              //   mainIcon
+              // );
+              // let subIcon = require(item["sub-icon"]);
               return (
                 <Fragment>
                   <li
@@ -28,9 +33,9 @@ const DropdownMenu = (props) => {
                     }`}
                   >
                     <div className="dropdown-menu__item-icons">
-                      <img src={Circle} alt="" />
+                      <img src={item["main-icon"]} alt="" />
                       <img
-                        src={FourSquare}
+                        src={item["sub-icon"]}
                         alt=""
                         className="dropdown-menu__item-icon icon"
                       />
