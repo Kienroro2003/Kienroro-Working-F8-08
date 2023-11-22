@@ -4,7 +4,8 @@ export default function useClickOutSides(dom = "button") {
   const nodeRef = useRef(null);
   const [show, setShow] = useState(false);
   useEffect(() => {
-    function handleClickOutSideDropdown(e) {
+    function handleClickOutSide(e) {
+      console.log(e.target);
       if (
         nodeRef.current &&
         !nodeRef.current.contains(e.target) &&
@@ -13,9 +14,8 @@ export default function useClickOutSides(dom = "button") {
         setShow(false);
       }
     }
-    document.addEventListener("click", handleClickOutSideDropdown);
-    return () =>
-      document.removeEventListener("click", handleClickOutSideDropdown);
+    document.addEventListener("click", handleClickOutSide);
+    return () => document.removeEventListener("click", handleClickOutSide);
   }, []);
   return { show, nodeRef, setShow };
 }

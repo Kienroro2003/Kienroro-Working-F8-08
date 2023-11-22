@@ -8,14 +8,20 @@ import Avatar from "../assets/images/avatar.jpeg";
 import useClickOutSide from "../hooks/useClickOutSide";
 import { useAuth } from "../utils/authProvider";
 import { useGallery } from "../contexts/gallery-context";
-import NumberFormat from "react-number-format";
 import { useEffect, useRef, useState } from "react";
 const data = require("../services/api/dataDropdown.json");
+
 const Header = () => {
   const [auth] = useAuth();
   const { listItem } = useGallery();
   const amountFavorites = listItem.filter((item) => item.isFavorite).length;
   const { nodeRef, show, setShow } = useClickOutSide();
+  const {
+    nodeRef: dropdownRef,
+    show: showDropdown,
+    setShow: setShowDropdown,
+  } = useClickOutSide("btn-show-dropdown");
+  console.log("🚀 ~ file: Header.js:24 ~ Header ~ dropdownRef:", dropdownRef);
   const handleShowInput = (e) => {
     if (!show) e.preventDefault();
     setShow(!show);
@@ -25,10 +31,6 @@ const Header = () => {
 
   // handle scroll event
   const handleScroll = (elTopOffset, elHeight) => {
-    console.log(
-      "🚀 ~ file: Header.js:29 ~ handleScroll ~ window.pageYOffset > elTopOffset + elHeight:",
-      window.pageYOffset > elTopOffset + elHeight
-    );
     if (window.pageYOffset > elTopOffset + elHeight) {
       setSticky({ isSticky: true, offset: elHeight });
     } else {
@@ -56,11 +58,21 @@ const Header = () => {
     >
       <div className="container">
         <div className="header__container">
-          <button ref={nodeRef} className="d-none d-xl-block">
+          <button
+            ref={dropdownRef}
+            onClick={() => setShowDropdown(!showDropdown)}
+            className="d-none d-xl-block btn-show-dropdown"
+          >
             <More className="icon"></More>
           </button>
           <Logo></Logo>
-          <Navbar data={data} className="header__navbar d-xl-none"></Navbar>
+          <Navbar
+            data={data}
+            className="header__navbar "
+            show={showDropdown}
+            nodeRef={dropdownRef}
+            // d-xl-none
+          ></Navbar>
           <div className=" top-act">
             <form
               className="top-act__form top-act__group d-md-none"
