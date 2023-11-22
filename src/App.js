@@ -9,30 +9,33 @@ import { Routes, Route } from "react-router-dom";
 import { routers } from "./routes";
 import Layout from "./layouts/Layout";
 import { Fragment } from "react";
+import { UserProvider, useUser } from "./utils/userProvider";
 
 function App() {
   return (
-    <Routes>
-      {routers.map((route, index) => {
-        const Page = route.component;
+    <UserProvider>
+      <Routes>
+        {routers.map((route, index) => {
+          const Page = route.component;
 
-        let LayoutDynamic = Layout;
-        if (route.layout) LayoutDynamic = route.layout;
-        else if (route.layout === null) LayoutDynamic = Fragment;
+          let LayoutDynamic = Layout;
+          if (route.layout) LayoutDynamic = route.layout;
+          else if (route.layout === null) LayoutDynamic = Fragment;
 
-        return (
-          <Route
-            key={index}
-            path={route.path}
-            element={
-              <LayoutDynamic>
-                <Page />
-              </LayoutDynamic>
-            }
-          />
-        );
-      })}
-    </Routes>
+          return (
+            <Route
+              key={index}
+              path={route.path}
+              element={
+                <LayoutDynamic>
+                  <Page />
+                </LayoutDynamic>
+              }
+            />
+          );
+        })}
+      </Routes>
+    </UserProvider>
   );
 }
 
