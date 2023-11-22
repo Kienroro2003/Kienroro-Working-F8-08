@@ -3,8 +3,11 @@ import Hero from "../components/Hero";
 import ProductMini from "../components/ProductMini";
 import ProductLarge from "../components/ProductLarge";
 import Filter from "../components/Filter";
+import { useGallery } from "../contexts/gallery-context";
 
 const Home = () => {
+  const { listItem } = useGallery();
+  console.log("🚀 ~ file: Home.js:10 ~ Home ~ listProduct:", listItem);
   return (
     <div className="home">
       <div className="container">
@@ -30,7 +33,14 @@ const Home = () => {
               <Filter></Filter>
             </div>
             <ul className="product-large__list">
-              <li className="product-large__item">
+              {listItem.map((item, index) => {
+                return (
+                  <li className="home-category__item">
+                    <ProductLarge key={item.id} info={item}></ProductLarge>
+                  </li>
+                );
+              })}
+              {/* <li className="product-large__item">
                 <ProductLarge></ProductLarge>
               </li>
               <li className="product-large__item">
@@ -41,7 +51,7 @@ const Home = () => {
               </li>
               <li className="product-large__item">
                 <ProductLarge></ProductLarge>
-              </li>
+              </li> */}
             </ul>
           </section>
         </div>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Qualità Oro Mountain Grown - Espresso Coffee Beans",
+    "price": 38.65,
+    "rating": 4.4,
+    "brand": "Lavazza",
+    "thumbImage": "assets/images/categories/product-large.png",
+    "isFavorite": false
+  },
+  {
+    "id": 2,
+    "title": "Qualità Oro Mountain Grown - Espresso Coffee Beans",
+    "price": 38.65,
+    "rating": 4.4,
+    "brand": "Lavazza",
+    "thumbImage": "assets/images/categories/product-large.png",
+    "isFavorite": false
+  },
+  {
+    "id": 3,
+    "title": "Qualità Oro Mountain Grown - Espresso Coffee Beans",
+    "price": 38.65,
+    "rating": 4.4,
+    "brand": "Lavazza",
+    "thumbImage": "assets/images/categories/product-large.png",
+    "isFavorite": false
+  },
+  {
+    "id": 4,
+    "title": "Qualità Oro Mountain Grown - Espresso Coffee Beans",
+    "price": 38.65,
+    "rating": 4.4,
+    "brand": "Lavazza",
+    "thumbImage": "assets/images/categories/product-large.png",
+    "isFavorite": false
+  }
+]

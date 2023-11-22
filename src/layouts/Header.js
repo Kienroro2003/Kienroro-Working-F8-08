@@ -6,11 +6,10 @@ import { ReactComponent as Heart } from "../assets/icons/heart.svg";
 import { ReactComponent as More } from "../assets/icons/more.svg";
 import Avatar from "../assets/images/avatar.jpeg";
 import useClickOutSide from "../hooks/useClickOutSide";
-import { useState } from "react";
 import { useAuth } from "../utils/authProvider";
 
 const Header = () => {
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
   const data = require("../services/api/dataDropdown.json");
   const { nodeRef, show, setShow } = useClickOutSide();
   const handleShowInput = (e) => {
