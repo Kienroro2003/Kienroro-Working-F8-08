@@ -7,9 +7,13 @@ import { ReactComponent as More } from "../assets/icons/more.svg";
 import Avatar from "../assets/images/avatar.jpeg";
 import useClickOutSide from "../hooks/useClickOutSide";
 import { useAuth } from "../utils/authProvider";
+import { useGallery } from "../contexts/gallery-context";
+import NumberFormat from "react-number-format";
 
 const Header = () => {
   const [auth] = useAuth();
+  const { listItem } = useGallery();
+  const amountFavorites = listItem.filter((item) => item.isFavorite).length;
   const data = require("../services/api/dataDropdown.json");
   const { nodeRef, show, setShow } = useClickOutSide();
   const handleShowInput = (e) => {
@@ -47,7 +51,11 @@ const Header = () => {
                 <div className="top-act__group d-lg-none ">
                   <button className="top-act__btn">
                     <Heart className="icon"></Heart>
-                    <span>03</span>
+                    <span>
+                      {amountFavorites > 9
+                        ? amountFavorites
+                        : `0${amountFavorites}`}
+                    </span>
                   </button>
                   <div class="h-full w-[1px] bg-[#EDEDF6]"></div>
                   <button className="top-act__btn">
