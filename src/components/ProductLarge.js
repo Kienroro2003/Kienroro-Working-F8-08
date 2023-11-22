@@ -37,7 +37,7 @@ const ProductLarge = ({ info }) => {
             {info.title}
           </a>
         </h3>
-        <div className="product-large__brand">{info.band}</div>
+        <div className="product-large__brand">{info.brand}</div>
         <div className="flex justify-between">
           <div className="product-large__price">${info.price}</div>
           <div className="product-large__rating">

@@ -10,20 +10,20 @@
   },
   {
     "id": 2,
-    "title": "Qualità Oro Mountain Grown - Espresso Coffee Beans",
-    "price": 38.65,
-    "rating": 4.4,
+    "title": "Lavazza Coffee Blends - Try the Italian Espresso",
+    "price": 53.0,
+    "rating": 3.4,
     "brand": "Lavazza",
-    "thumbImage": "assets/images/categories/product-large.png",
+    "thumbImage": "assets/images/categories/product-large-2.png",
     "isFavorite": false
   },
   {
     "id": 3,
-    "title": "Qualità Oro Mountain Grown - Espresso Coffee Beans",
-    "price": 38.65,
-    "rating": 4.4,
-    "brand": "Lavazza",
-    "thumbImage": "assets/images/categories/product-large.png",
+    "title": "Lavazza - Caffè Espresso Black Tin - Ground coffee",
+    "price": 99.99,
+    "rating": "5.0",
+    "brand": "welikecoffee",
+    "thumbImage": "assets/images/categories/product-large-3.png",
     "isFavorite": false
   },
   {
@@ -32,7 +32,7 @@
     "price": 38.65,
     "rating": 4.4,
     "brand": "Lavazza",
-    "thumbImage": "assets/images/categories/product-large.png",
+    "thumbImage": "assets/images/categories/product-large-4.png",
     "isFavorite": false
   }
 ]
