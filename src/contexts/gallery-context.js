@@ -25,7 +25,6 @@ function GalleryProvider(props) {
     setCartItems((prevItems) => {
       // 4. Kiểm tra sản phẩm đã tồn tại trong giỏ hàng hay chưa
       const isExisted = prevItems.some((item) => item.id === newItem.id);
-      console.log("setCartItems ~ isExisted", isExisted);
       // 5. Nếu tồn tại thì trả về danh sách trước đó
       if (isExisted) return [...prevItems];
       // 6. Chưa tồn tại thì thêm vào giỏ hàng
@@ -54,7 +53,7 @@ function GalleryProvider(props) {
 
 function useGallery() {
   const context = useContext(GalleryContext);
-  console.log(context);
+
   if (typeof context === "undefined")
     throw new Error("useGallery must be used within a GalleryProvider");
   return context;

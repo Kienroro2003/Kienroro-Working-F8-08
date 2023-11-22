@@ -10,7 +10,6 @@ function AuthProvider(props) {
 
 function useAuth() {
   const context = useContext(AuthContext);
-  console.log(context);
   if (typeof context === "undefined")
     throw new Error("useCount must be used within a CountProvider");
   return context;

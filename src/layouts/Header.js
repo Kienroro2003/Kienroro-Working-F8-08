@@ -9,19 +9,51 @@ import useClickOutSide from "../hooks/useClickOutSide";
 import { useAuth } from "../utils/authProvider";
 import { useGallery } from "../contexts/gallery-context";
 import NumberFormat from "react-number-format";
-
+import { useEffect, useRef, useState } from "react";
+const data = require("../services/api/dataDropdown.json");
 const Header = () => {
   const [auth] = useAuth();
   const { listItem } = useGallery();
   const amountFavorites = listItem.filter((item) => item.isFavorite).length;
-  const data = require("../services/api/dataDropdown.json");
   const { nodeRef, show, setShow } = useClickOutSide();
   const handleShowInput = (e) => {
     if (!show) e.preventDefault();
     setShow(!show);
   };
+  const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
+  const headerRef = useRef(null);
+
+  // handle scroll event
+  const handleScroll = (elTopOffset, elHeight) => {
+    console.log(
+      "🚀 ~ file: Header.js:29 ~ handleScroll ~ window.pageYOffset > elTopOffset + elHeight:",
+      window.pageYOffset > elTopOffset + elHeight
+    );
+    if (window.pageYOffset > elTopOffset + elHeight) {
+      setSticky({ isSticky: true, offset: elHeight });
+    } else {
+      setSticky({ isSticky: false, offset: 0 });
+    }
+  };
+
+  // add/remove scroll event listener
+  useEffect(() => {
+    var header = headerRef.current.getBoundingClientRect();
+    const handleScrollEvent = () => {
+      handleScroll(header.top, header.height);
+    };
+
+    window.addEventListener("scroll", handleScrollEvent);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollEvent);
+    };
+  }, []);
   return (
-    <div className="header">
+    <header
+      className={`header navbar${sticky.isSticky ? " sticky" : ""}`}
+      ref={headerRef}
+    >
       <div className="container">
         <div className="header__container">
           <button ref={nodeRef} className="d-none d-xl-block">
@@ -83,7 +115,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
