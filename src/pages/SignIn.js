@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
-import { useUser } from "../utils/userProvider";
+import { useAuth } from "../utils/authProvider";
 
 const schema = yup
   .object({
@@ -25,7 +25,7 @@ const schema = yup
   })
   .required();
 const SignIn = () => {
-  const [, setUser] = useUser();
+  const [, setAuth] = useAuth();
   const navigate = useNavigate();
   const {
     control,
@@ -42,7 +42,7 @@ const SignIn = () => {
   const onSubmit = (data) => {
     if (isValid) {
       console.log(data);
-      setUser(true);
+      setAuth(true);
       navigate("/");
     }
   };

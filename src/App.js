@@ -9,11 +9,11 @@ import { Routes, Route } from "react-router-dom";
 import { routers } from "./routes";
 import Layout from "./layouts/Layout";
 import { Fragment } from "react";
-import { UserProvider, useUser } from "./utils/userProvider";
+import { AuthProvider, useAuth } from "./utils/authProvider";
 
 function App() {
   return (
-    <UserProvider>
+    <AuthProvider>
       <Routes>
         {routers.map((route, index) => {
           const Page = route.component;
@@ -35,7 +35,7 @@ function App() {
           );
         })}
       </Routes>
-    </UserProvider>
+    </AuthProvider>
   );
 }
 

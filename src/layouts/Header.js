@@ -7,10 +7,10 @@ import { ReactComponent as More } from "../assets/icons/more.svg";
 import Avatar from "../assets/images/avatar.jpeg";
 import useClickOutSide from "../hooks/useClickOutSide";
 import { useState } from "react";
-import { useUser } from "../utils/userProvider";
+import { useAuth } from "../utils/authProvider";
 
 const Header = () => {
-  const [user, setUser] = useUser();
+  const [auth, setAuth] = useAuth();
   const data = require("../services/api/dataDropdown.json");
   const { nodeRef, show, setShow } = useClickOutSide();
   const handleShowInput = (e) => {
@@ -43,7 +43,7 @@ const Header = () => {
                 <Search className="icon"></Search>
               </button>
             </form>
-            {user ? (
+            {auth ? (
               <>
                 <div className="top-act__group d-lg-none ">
                   <button className="top-act__btn">
