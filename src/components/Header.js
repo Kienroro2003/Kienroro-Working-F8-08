@@ -1,5 +1,5 @@
-import Logo from "../components/Logo";
-import Navbar from "../components/Navbar";
+import Logo from "./Logo";
+import Navbar from "./Navbar";
 import { ReactComponent as Search } from "../assets/icons/search.svg";
 import { ReactComponent as Cart } from "../assets/icons/cart.svg";
 import { ReactComponent as Heart } from "../assets/icons/heart.svg";
@@ -20,8 +20,7 @@ const Header = () => {
     nodeRef: dropdownRef,
     show: showDropdown,
     setShow: setShowDropdown,
-  } = useClickOutSide("btn-show-dropdown");
-  console.log("🚀 ~ file: Header.js:24 ~ Header ~ dropdownRef:", dropdownRef);
+  } = useClickOutSide();
   const handleShowInput = (e) => {
     if (!show) e.preventDefault();
     setShow(!show);
@@ -61,9 +60,9 @@ const Header = () => {
           <button
             // ref={dropdownRef}
             onClick={() => setShowDropdown((showDropdown) => !showDropdown)}
-            className="d-none d-xl-block btn-show-dropdown"
+            className="d-none d-xl-block button"
           >
-            <More className="icon"></More>
+            <More className="pointer-events-none icon"></More>
           </button>
           <Logo></Logo>
           <Navbar

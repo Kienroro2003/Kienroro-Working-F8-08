@@ -19,7 +19,7 @@
   }
   &__container {
     width: min(1240px, 100%);
-    display: none;
+
     position: absolute;
     left: 0;
     padding-top: 68px;
@@ -30,6 +30,7 @@
     @include abstracts.screen(xl) {
       position: static;
       padding-top: 0;
+      display: none;
     }
   }
 

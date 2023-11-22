@@ -2,7 +2,7 @@ import "./sass/index.scss";
 
 import { Routes, Route } from "react-router-dom";
 import { routers } from "./routes";
-import Layout from "./layouts/Layout";
+import AuthLayout from "./layouts/AuthLayout";
 import { Fragment } from "react";
 import { AuthProvider } from "./utils/authProvider";
 import { useGallery, GalleryProvider } from "./contexts/gallery-context";
@@ -15,7 +15,7 @@ function App() {
           {routers.map((route, index) => {
             const Page = route.component;
 
-            let LayoutDynamic = Layout;
+            let LayoutDynamic = AuthLayout;
             if (route.layout) LayoutDynamic = route.layout;
             else if (route.layout === null) LayoutDynamic = Fragment;
 
