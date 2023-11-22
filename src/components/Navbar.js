@@ -3,7 +3,7 @@ import React from "react";
 import DropdownMenu from "./DropdownMenu";
 import { ReactComponent as ArrowDown } from "../assets/icons/arrow-down.svg";
 
-const Navbar = ({ show, nodeRef, ...props }) => {
+const Navbar = ({ show, setShow, nodeRef, ...props }) => {
   return (
     <>
       <nav
@@ -28,7 +28,12 @@ const Navbar = ({ show, nodeRef, ...props }) => {
             })}
         </ul>
       </nav>
-      {show && <div className="fixed inset-0 z-10 bg-slate-950/30"></div>}
+      {show && (
+        <div
+          className="fixed inset-0 z-10 bg-slate-950/30"
+          onClick={() => setShow((showDropdown) => !showDropdown)}
+        ></div>
+      )}
     </>
   );
 };

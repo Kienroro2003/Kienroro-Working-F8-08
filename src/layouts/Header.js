@@ -59,8 +59,8 @@ const Header = () => {
       <div className="container">
         <div className="header__container">
           <button
-            ref={dropdownRef}
-            onClick={() => setShowDropdown(!showDropdown)}
+            // ref={dropdownRef}
+            onClick={() => setShowDropdown((showDropdown) => !showDropdown)}
             className="d-none d-xl-block btn-show-dropdown"
           >
             <More className="icon"></More>
@@ -70,6 +70,7 @@ const Header = () => {
             data={data}
             className="header__navbar "
             show={showDropdown}
+            setShow={setShowDropdown}
             nodeRef={dropdownRef}
             // d-xl-none
           ></Navbar>
