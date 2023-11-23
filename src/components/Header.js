@@ -9,7 +9,6 @@ import useClickOutSide from "../hooks/useClickOutSide";
 import { useAuth } from "../utils/authProvider";
 import { useGallery } from "../contexts/gallery-context";
 import { useEffect, useRef, useState } from "react";
-import { useDebounce } from "@uidotdev/usehooks";
 const data = require("../services/api/dataDropdown.json");
 
 function debounceFn(func, wait = 20, immediate = true) {

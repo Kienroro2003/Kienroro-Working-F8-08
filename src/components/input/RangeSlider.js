@@ -5,13 +5,13 @@ const RangeSlider = ({ min, max, step, control, ...props }) => {
   const { field: fieldMax } = useController({
     control,
     name: props.nameMax,
-    defaultValue: min,
+    defaultValue: max,
   });
 
   const { field: fieldMin } = useController({
     control,
     name: props.nameMin,
-    defaultValue: max,
+    defaultValue: min,
   });
   const { value: valuesMax } = fieldMax;
   const { value: valueMin } = fieldMin;

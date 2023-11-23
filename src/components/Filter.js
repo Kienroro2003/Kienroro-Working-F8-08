@@ -3,6 +3,7 @@ import FilterIcon from "../assets/icons/filter.svg";
 import useClickOutSide from "../hooks/useClickOutSide";
 import RangeSlider from "./input/RangeSlider";
 import { useForm } from "react-hook-form";
+import InputFilter from "./input/InputFilter";
 
 const Filter = () => {
   const { show, nodeRef, setShow } = useClickOutSide();
@@ -66,13 +67,11 @@ const Filter = () => {
                     Minimum{" "}
                   </label>
                   <div class="filter__form-text-input filter__form-text-input--small">
-                    <input
-                      type="text"
-                      name=""
-                      id=""
-                      value="$30.00"
-                      class="filter__form-input filter__form-input--small"
-                    />
+                    <InputFilter
+                      name="min"
+                      className="filter__form-input filter__form-input--small"
+                      control={control}
+                    ></InputFilter>
                   </div>
                 </div>
                 <div>
@@ -84,13 +83,11 @@ const Filter = () => {
                     Maximum{" "}
                   </label>
                   <div class="filter__form-text-input filter__form-text-input--small">
-                    <input
-                      type="text"
-                      name=""
-                      id=""
-                      value="$100.00"
-                      class="filter__form-input filter__form-input--small"
-                    />
+                    <InputFilter
+                      name="max"
+                      className="filter__form-input filter__form-input--small"
+                      control={control}
+                    ></InputFilter>
                   </div>
                 </div>
               </div>
