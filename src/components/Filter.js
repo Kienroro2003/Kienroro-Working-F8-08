@@ -5,7 +5,6 @@ import RangeSlider from "./input/RangeSlider";
 import { useForm } from "react-hook-form";
 
 const Filter = () => {
-  const [value, setValue] = React.useState({ min: 0, max: 100 });
   const { show, nodeRef, setShow } = useClickOutSide();
   const handleClickFilter = () => {
     setShow(!show);
@@ -52,8 +51,6 @@ const Filter = () => {
                   min={0}
                   max={100}
                   step={5}
-                  value={value}
-                  onChangeValue={setValue}
                   control={control}
                   nameMax={"max"}
                   nameMin={"min"}
