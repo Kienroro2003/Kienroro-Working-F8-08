@@ -58,10 +58,15 @@
     filter: var(--filter-icon-arrow);
   }
 
+  &__action {
+    display: flex;
+    gap: 20px;
+  }
+
   &__footer {
     margin-top: 18px;
     justify-content: flex-end;
-    position: sticky;
+    // position: sticky;
     bottom: 0;
     left: 0;
     background-color: var(--filter-bg);
@@ -83,7 +88,7 @@
 
   &__cancel,
   &__submit {
-    height: 38px;
+    height: 40px;
     padding: 0 10px;
 
     @include abstracts.screen(sm) {
@@ -97,7 +102,6 @@
 
   &__submit {
     font-size: 1.4rem;
-    height: 38px;
   }
 
   &__form {
@@ -138,13 +142,29 @@
       font-size: 1.4rem;
       font-weight: 500;
       line-height: 142.857%;
+      cursor: pointer;
+
+      position: relative;
 
       @include abstracts.screen(sm) {
         min-width: auto;
         width: 100%;
       }
 
-      cursor: pointer;
+      &__values {
+        border-radius: 6px;
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        translate: 0 100%;
+        overflow: hidden;
+      }
+
+      &__value {
+        padding: 14px;
+        min-width: var(--width, 108px);
+        background-color: #fff;
+      }
     }
 
     &-select + &-select {

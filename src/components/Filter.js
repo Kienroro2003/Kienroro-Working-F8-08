@@ -3,7 +3,8 @@ import FilterIcon from "../assets/icons/filter.svg";
 import useClickOutSide from "../hooks/useClickOutSide";
 import RangeSlider from "./input/RangeSlider";
 import { useForm } from "react-hook-form";
-import InputFilter from "./input/InputFilter";
+import InputNumberFilter from "./input/InputNumberFilter";
+import FilterSelect from "./select-input/FilterSelect";
 
 const Filter = () => {
   const { show, nodeRef, setShow } = useClickOutSide();
@@ -12,13 +13,15 @@ const Filter = () => {
   };
   const {
     control,
+    setValue,
+    register,
     handleSubmit,
     formState: { isValid },
   } = useForm({
     defaultValues: {
-      email: "",
-      password: "",
       price: { min: 0, max: 100 },
+      brand: "",
+      size: "",
     },
   });
   const onSubmit = (data) => {
@@ -67,11 +70,11 @@ const Filter = () => {
                     Minimum{" "}
                   </label>
                   <div class="filter__form-text-input filter__form-text-input--small">
-                    <InputFilter
+                    <InputNumberFilter
                       name="min"
                       className="filter__form-input filter__form-input--small"
                       control={control}
-                    ></InputFilter>
+                    ></InputNumberFilter>
                   </div>
                 </div>
                 <div>
@@ -83,11 +86,11 @@ const Filter = () => {
                     Maximum{" "}
                   </label>
                   <div class="filter__form-text-input filter__form-text-input--small">
-                    <InputFilter
+                    <InputNumberFilter
                       name="max"
                       className="filter__form-input filter__form-input--small"
                       control={control}
-                    ></InputFilter>
+                    ></InputNumberFilter>
                   </div>
                 </div>
               </div>
@@ -102,17 +105,7 @@ const Filter = () => {
               </label>
               <div class="filter__form-group">
                 <div class="filter__form-select-wrap">
-                  <div
-                    class="filter__form-select"
-                    style={{ "--width": "158px" }}
-                  >
-                    500g
-                    <img
-                      src="./assets/icons/select-arrow.svg"
-                      alt=""
-                      class="filter__form-select-arrow icon"
-                    />
-                  </div>
+                  <FilterSelect></FilterSelect>
                   <div class="filter__form-select">
                     Gram
                     <img
@@ -138,15 +131,15 @@ const Filter = () => {
             <div class="filter__col">
               <div class="filter__col">
                 <label for="" class="filter__form-label">
-                  Size/Weight
+                  Brand
                 </label>
               </div>
               <div class="filter__form-group">
                 <div class="filter__form-text-input">
                   <input
+                    {...register("brand")}
                     type="text"
-                    name=""
-                    id=""
+                    id="brand"
                     placeholder="Search brand name"
                     class="filter__form-input"
                   />
@@ -167,19 +160,21 @@ const Filter = () => {
             </div>
           </div>
           <div class="filter__row filter__footer">
-            <button
-              class="btn btn--text filter__cancel js-toggle"
-              type="button"
-              onClick={handleClickFilter}
-            >
-              Cancel
-            </button>
-            <button
-              class="btn btn--primary filter__submit js-toggle"
-              toggle-target="#filter-home"
-            >
-              Show Result
-            </button>
+            <div className="filter__action">
+              <button
+                class="btn btn--text filter__cancel js-toggle"
+                type="button"
+                onClick={handleClickFilter}
+              >
+                Cancel
+              </button>
+              <button
+                class="btn btn--primary filter__submit js-toggle"
+                toggle-target="#filter-home"
+              >
+                Show Result
+              </button>
+            </div>
           </div>
         </form>
       </div>

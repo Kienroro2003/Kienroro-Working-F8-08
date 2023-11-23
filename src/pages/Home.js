@@ -28,7 +28,7 @@ const Home = () => {
             </ul>
           </section>
           <section className="home-section">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between home-section__top">
               <h2 className="home-section__heading">Browse Categories</h2>
               <Filter></Filter>
             </div>
