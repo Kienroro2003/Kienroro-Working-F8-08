@@ -1,8 +1,10 @@
 import React from "react";
 import FilterIcon from "../assets/icons/filter.svg";
 import useClickOutSide from "../hooks/useClickOutSide";
+import RangeSlider from "./input/RangeSlider";
 
 const Filter = () => {
+  const [value, setValue] = React.useState({ min: 0, max: 100 });
   const { show, nodeRef, setShow } = useClickOutSide();
   const handleClickFilter = () => {
     setShow(!show);
@@ -29,10 +31,13 @@ const Filter = () => {
                 Price
               </label>
               <div class="filter__form-group">
-                <div
-                  class="filter__form-slider"
-                  style={{ "--min-value": "10%", "--max-value": "60%" }}
-                ></div>
+                <RangeSlider
+                  min={0}
+                  max={100}
+                  step={5}
+                  value={value}
+                  onChange={setValue}
+                />
               </div>
               <div class="filter__form-group filter__form-group--inline">
                 <div>

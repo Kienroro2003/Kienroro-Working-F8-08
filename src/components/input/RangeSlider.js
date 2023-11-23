@@ -3,12 +3,14 @@ import React from "react";
 const RangeSlider = ({ min, max, value, step, onChange }) => {
   const [minValue, setMinValue] = React.useState(value ? value.min : min);
   const [maxValue, setMaxValue] = React.useState(value ? value.max : max);
+
   React.useEffect(() => {
     if (value) {
       setMinValue(value.min);
       setMaxValue(value.max);
     }
   }, [value]);
+
   const handleMinChange = (e) => {
     e.preventDefault();
     const newMinVal = Math.min(+e.target.value, maxValue - step);
@@ -25,24 +27,30 @@ const RangeSlider = ({ min, max, value, step, onChange }) => {
 
   const minPos = ((minValue - min) / (max - min)) * 100;
   const maxPos = ((maxValue - min) / (max - min)) * 100;
+
   return (
-    <div>
-      <input
-        type="range"
-        value={minValue}
-        min={min}
-        max={max}
-        step={step}
-        onChange={handleMinChange}
-      />
-      <input
-        type="range"
-        value={maxValue}
-        min={min}
-        max={max}
-        step={step}
-        onChange={handleMaxChange}
-      />
+    <div class="wrapper">
+      <div class="input-wrapper">
+        <input
+          class="input"
+          type="range"
+          value={minValue}
+          min={min}
+          max={max}
+          step={step}
+          onChange={handleMinChange}
+        />
+        <input
+          class="input"
+          type="range"
+          value={maxValue}
+          min={min}
+          max={max}
+          step={step}
+          onChange={handleMaxChange}
+        />
+      </div>
+
       <div class="control-wrapper">
         <div class="control" style={{ left: `${minPos}%` }} />
         <div class="rail">
@@ -56,3 +64,5 @@ const RangeSlider = ({ min, max, value, step, onChange }) => {
     </div>
   );
 };
+
+export default RangeSlider;
