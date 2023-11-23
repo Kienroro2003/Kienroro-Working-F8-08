@@ -9,7 +9,24 @@ import useClickOutSide from "../hooks/useClickOutSide";
 import { useAuth } from "../utils/authProvider";
 import { useGallery } from "../contexts/gallery-context";
 import { useEffect, useRef, useState } from "react";
+import { useDebounce } from "@uidotdev/usehooks";
 const data = require("../services/api/dataDropdown.json");
+
+function debounceFn(func, wait = 20, immediate = true) {
+  let timeout;
+  return function () {
+    let context = this,
+      args = arguments;
+    let later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
 
 const Header = () => {
   const [auth] = useAuth();
@@ -25,15 +42,17 @@ const Header = () => {
     if (!show) e.preventDefault();
     setShow(!show);
   };
-  const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
+  const [sticky, setSticky] = useState(false);
   const headerRef = useRef(null);
 
   // handle scroll event
   const handleScroll = (elTopOffset, elHeight) => {
     if (window.pageYOffset > elTopOffset + elHeight) {
-      setSticky({ isSticky: true, offset: elHeight });
+      setSticky(true);
+      document.body.style.paddingTop = `${elHeight}px`;
     } else {
-      setSticky({ isSticky: false, offset: 0 });
+      setSticky(false);
+      document.body.style.paddingTop = 0;
     }
   };
 
@@ -43,16 +62,14 @@ const Header = () => {
     const handleScrollEvent = () => {
       handleScroll(header.top, header.height);
     };
-
-    window.addEventListener("scroll", handleScrollEvent);
-
-    return () => {
-      window.removeEventListener("scroll", handleScrollEvent);
-    };
+    window.addEventListener("scroll", debounceFn(handleScrollEvent, 300));
+    // return () => {
+    //   window.removeEventListener("scroll", handleScrollEvent);
+    // };
   }, []);
   return (
     <header
-      className={`header navbar${sticky.isSticky ? " sticky" : ""}`}
+      className={`header navbar${sticky ? " sticky" : ""}`}
       ref={headerRef}
     >
       <div className="container">
