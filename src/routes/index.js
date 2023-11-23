@@ -1,10 +1,10 @@
 import { Home, SignIn, SignUp } from "../pages";
-import { AuthLayout } from "../layouts";
+import { AuthLayout, Layout } from "../layouts";
 
 const routers = [
-  { path: "/", layout: AuthLayout, component: Home },
-  { path: "/sign-in", layout: null, component: SignIn },
-  { path: "/sign-up", layout: null, component: SignUp },
+  { path: "/", layout: Layout, component: Home },
+  { path: "/sign-in", layout: AuthLayout, component: SignIn },
+  { path: "/sign-up", layout: AuthLayout, component: SignUp },
 ];
 
 export { routers };
