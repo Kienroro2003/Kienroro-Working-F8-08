@@ -5,12 +5,6 @@ export default function useClickOutSides(dom = "button") {
   const [show, setShow] = useState(false);
   useEffect(() => {
     function handleClickOutSide(e) {
-      console.log(nodeRef.current);
-      console.log(
-        nodeRef.current &&
-          !nodeRef.current.contains(e.target) &&
-          !e.target.matches(dom)
-      );
       if (
         nodeRef.current &&
         !nodeRef.current.contains(e.target) &&

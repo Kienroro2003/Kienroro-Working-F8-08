@@ -1,32 +1,53 @@
 import React from "react";
+import { useController } from "react-hook-form";
 
-const RangeSlider = ({ min, max, value, step, onChange }) => {
-  const [minValue, setMinValue] = React.useState(value ? value.min : min);
-  const [maxValue, setMaxValue] = React.useState(value ? value.max : max);
+const RangeSlider = ({
+  min,
+  max,
+  // value = {},
+  step,
+  // onChangeValue,
+  control,
+  ...props
+}) => {
+  // const [minValue, setMinValue] = React.useState(value ? value.min : min);
+  // const [maxValue, setMaxValue] = React.useState(value ? value.max : max);
+  const { field: fieldMax } = useController({
+    control,
+    name: props.nameMax,
+  });
 
-  React.useEffect(() => {
-    if (value) {
-      setMinValue(value.min);
-      setMaxValue(value.max);
-    }
-  }, [value]);
+  const { field: fieldMin } = useController({
+    control,
+    name: props.nameMin,
+  });
+  const { value: valuesMax } = fieldMax;
+  const { value: valueMin } = fieldMin;
+  console.log("🚀 ~ file: RangeSlider.js:25 ~ fieldMin:", valuesMax);
 
-  const handleMinChange = (e) => {
-    e.preventDefault();
-    const newMinVal = Math.min(+e.target.value, maxValue - step);
-    if (!value) setMinValue(newMinVal);
-    onChange({ min: newMinVal, max: maxValue });
-  };
+  // React.useEffect(() => {
+  //   if (value) {
+  //     setMinValue(value.min);
+  //     setMaxValue(value.max);
+  //   }
+  // }, [value]);
 
-  const handleMaxChange = (e) => {
-    e.preventDefault();
-    const newMaxVal = Math.max(+e.target.value, minValue + step);
-    if (!value) setMaxValue(newMaxVal);
-    onChange({ min: minValue, max: newMaxVal });
-  };
+  // const handleMinChange = (e) => {
+  //   e.preventDefault();
+  //   const newMinVal = Math.min(+e.target.value, maxValue - step);
+  //   if (!value) setMinValue(newMinVal);
+  //   onChangeValue({ min: newMinVal, max: maxValue });
+  // };
 
-  const minPos = ((minValue - min) / (max - min)) * 100;
-  const maxPos = ((maxValue - min) / (max - min)) * 100;
+  // const handleMaxChange = (e) => {
+  //   e.preventDefault();
+  //   const newMaxVal = Math.max(+e.target.value, minValue + step);
+  //   if (!value) setMaxValue(newMaxVal);
+  //   onChangeValue({ min: minValue, max: newMaxVal });
+  // };
+
+  const minPos = ((valuesMax - min) / (max - min)) * 100;
+  const maxPos = ((valueMin - min) / (max - min)) * 100;
 
   return (
     <div class="wrapper">
@@ -34,20 +55,22 @@ const RangeSlider = ({ min, max, value, step, onChange }) => {
         <input
           class="input"
           type="range"
-          value={minValue}
+          value={valueMin}
           min={min}
           max={max}
           step={step}
-          onChange={handleMinChange}
+          {...fieldMin}
+          // onChange={handleMinChange}
         />
         <input
           class="input"
           type="range"
-          value={maxValue}
+          value={valuesMax}
           min={min}
           max={max}
           step={step}
-          onChange={handleMaxChange}
+          {...fieldMax}
+          // onChange={handleMaxChange}
         />
       </div>
 

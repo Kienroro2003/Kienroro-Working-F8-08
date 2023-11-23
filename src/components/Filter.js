@@ -2,12 +2,29 @@ import React from "react";
 import FilterIcon from "../assets/icons/filter.svg";
 import useClickOutSide from "../hooks/useClickOutSide";
 import RangeSlider from "./input/RangeSlider";
+import { useForm } from "react-hook-form";
 
 const Filter = () => {
   const [value, setValue] = React.useState({ min: 0, max: 100 });
   const { show, nodeRef, setShow } = useClickOutSide();
   const handleClickFilter = () => {
     setShow(!show);
+  };
+  const {
+    control,
+    handleSubmit,
+    formState: { isValid },
+  } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+      price: { min: 0, max: 100 },
+    },
+  });
+  const onSubmit = (data) => {
+    if (isValid) {
+      console.log(data);
+    }
   };
   return (
     <div class="filter-wrap" ref={nodeRef}>
@@ -23,7 +40,7 @@ const Filter = () => {
       <div class={`filter ${show ? "show" : "hide"}`} id="filter-home">
         <img src="./assets/icons/arrow.png" alt="" class="filter__arrow" />
         <h3 class="filter__heading">Filter</h3>
-        <form action="" class="filter__form">
+        <form onSubmit={handleSubmit(onSubmit)} class="filter__form">
           <div class="filter__row filter__content">
             {/* <!-- Filter column 1 --> */}
             <div class="filter__col">
@@ -36,7 +53,10 @@ const Filter = () => {
                   max={100}
                   step={5}
                   value={value}
-                  onChange={setValue}
+                  onChangeValue={setValue}
+                  control={control}
+                  nameMax={"max"}
+                  nameMin={"min"}
                 />
               </div>
               <div class="filter__form-group filter__form-group--inline">
