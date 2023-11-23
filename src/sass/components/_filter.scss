@@ -158,12 +158,24 @@
         left: 0;
         translate: 0 100%;
         overflow: hidden;
+        border: 1px solid #d2d1d6;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.2s linear;
+        &.show {
+          visibility: visible;
+          opacity: 1;
+        }
       }
 
       &__value {
         padding: 14px;
         min-width: var(--width, 108px);
         background-color: #fff;
+        border-bottom: 1px solid #d2d1d6;
+        &:hover {
+          background-color: #d2d1d6;
+        }
       }
     }
 

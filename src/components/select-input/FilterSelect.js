@@ -1,17 +1,26 @@
 import React from "react";
 import { useWatch } from "react-hook-form";
 import useClickOutSides from "../../hooks/useClickOutSide";
+import { useWeightUnit } from "../../contexts/weightUnit-context";
 
-const FilterSelect = ({ control, setValue, name, data, ...props }) => {
+const FilterSelect = ({ control, weight = true, setValue, name, ...props }) => {
+  const { unit, setUnit, units, weights } = useWeightUnit();
   const { show, setShow, nodeRef } = useClickOutSides();
   const weightValue = useWatch({
     control,
-    name: "weight",
-    defaultValue: "",
+    name: name,
   });
-  console.log(weightValue);
+  const data = weight ? weights : units;
   const handleClickSelect = (event) => {
     setValue(name, event.target.dataset.weight);
+    if (!weight) {
+      setUnit(
+        () =>
+          units[
+            units.findIndex((item) => item.unit === event.target.dataset.weight)
+          ]
+      );
+    }
   };
   return (
     <>
@@ -21,41 +30,26 @@ const FilterSelect = ({ control, setValue, name, data, ...props }) => {
         style={{ "--width": "158px" }}
         onClick={() => setShow(!show)}
       >
-        {weightValue ? `${weightValue}g` : "Weight"}
+        {weightValue ? `${weightValue}${weight ? unit.alias : ""}` : "Weight"}
         <img
           src="./assets/icons/select-arrow.svg"
           alt=""
           class="filter__form-select-arrow icon"
         />
-        <div className="filter__form-select__values">
-          <div
-            className="filter__form-select__value"
-            onClick={handleClickSelect}
-            data-weight="250"
-          >
-            250
-          </div>
-          <div
-            className="filter__form-select__value"
-            onClick={handleClickSelect}
-            data-weight="500"
-          >
-            500
-          </div>
-          <div
-            className="filter__form-select__value"
-            onClick={handleClickSelect}
-            data-weight="750"
-          >
-            750
-          </div>
-          <div
-            className="filter__form-select__value"
-            onClick={handleClickSelect}
-            data-weight="1000"
-          >
-            1000
-          </div>
+        <div className={`filter__form-select__values ${show ? "show" : ""}`}>
+          {data &&
+            data.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="filter__form-select__value"
+                  onClick={handleClickSelect}
+                  data-weight={weight ? item.weight : item.unit}
+                >
+                  {weight ? item.weight : item.unit}
+                </div>
+              );
+            })}
         </div>
       </div>
     </>

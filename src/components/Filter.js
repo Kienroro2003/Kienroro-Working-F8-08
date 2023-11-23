@@ -5,6 +5,7 @@ import RangeSlider from "./input/RangeSlider";
 import { useForm } from "react-hook-form";
 import InputNumberFilter from "./input/InputNumberFilter";
 import FilterSelect from "./select-input/FilterSelect";
+import { WeightUnitProvider } from "../contexts/weightUnit-context";
 
 const Filter = () => {
   const { show, nodeRef, setShow } = useClickOutSide();
@@ -22,6 +23,7 @@ const Filter = () => {
       price: { min: 0, max: 100 },
       brand: "",
       weight: "",
+      unitWeight: "Gam",
     },
   });
   const onSubmit = (data) => {
@@ -105,19 +107,20 @@ const Filter = () => {
               </label>
               <div class="filter__form-group">
                 <div class="filter__form-select-wrap">
-                  <FilterSelect
-                    control={control}
-                    setValue={setValue}
-                    name={"weight"}
-                  ></FilterSelect>
-                  <div class="filter__form-select">
-                    Gram
-                    <img
-                      src="./assets/icons/select-arrow.svg"
-                      alt=""
-                      class="filter__form-select-arrow icon"
-                    />
-                  </div>
+                  <WeightUnitProvider>
+                    <FilterSelect
+                      control={control}
+                      setValue={setValue}
+                      name={"weight"}
+                    ></FilterSelect>
+                    <FilterSelect
+                      control={control}
+                      setValue={setValue}
+                      name={"unitWeight"}
+                      data={["Gam", "Kg"]}
+                      weight={false}
+                    ></FilterSelect>
+                  </WeightUnitProvider>
                 </div>
               </div>
               <div class="filter__form-group">
