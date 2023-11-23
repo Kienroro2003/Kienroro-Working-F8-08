@@ -12,15 +12,17 @@ const FilterSelect = ({ control, weight = true, setValue, name, ...props }) => {
   });
   const data = weight ? weights : units;
   const handleClickSelect = (event) => {
-    setValue(name, event.target.dataset.weight);
     if (!weight) {
+      setValue(name, event.target.dataset.weight);
       setUnit(
         () =>
           units[
             units.findIndex((item) => item.unit === event.target.dataset.weight)
           ]
       );
+      return;
     }
+    setValue(name, +event.target.dataset.weight);
   };
   return (
     <>

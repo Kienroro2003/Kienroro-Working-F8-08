@@ -62,9 +62,9 @@ const Header = () => {
       handleScroll(header.top, header.height);
     };
     window.addEventListener("scroll", debounceFn(handleScrollEvent, 300));
-    // return () => {
-    //   window.removeEventListener("scroll", handleScrollEvent);
-    // };
+    return () => {
+      window.removeEventListener("scroll", debounceFn(handleScrollEvent, 300));
+    };
   }, []);
   return (
     <header

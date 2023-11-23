@@ -1,0 +1,5 @@
+- Css input khi bị invalid
+- fix debounce header
+- thêm validate cho filter
+- thêm slider cho hero, product, ...
+- fix price in filter
