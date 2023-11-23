@@ -40,18 +40,6 @@ const Home = () => {
                   </li>
                 );
               })}
-              {/* <li className="product-large__item">
-                <ProductLarge></ProductLarge>
-              </li>
-              <li className="product-large__item">
-                <ProductLarge></ProductLarge>
-              </li>
-              <li className="product-large__item">
-                <ProductLarge></ProductLarge>
-              </li>
-              <li className="product-large__item">
-                <ProductLarge></ProductLarge>
-              </li> */}
             </ul>
           </section>
         </div>

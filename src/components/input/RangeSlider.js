@@ -2,7 +2,10 @@ import React from "react";
 import { useController } from "react-hook-form";
 
 const RangeSlider = ({ min, max, step, control, ...props }) => {
-  const { field: fieldMax } = useController({
+  const {
+    field: fieldMax,
+    formState: { errors },
+  } = useController({
     control,
     name: props.nameMax,
     defaultValue: max,
@@ -31,6 +34,7 @@ const RangeSlider = ({ min, max, step, control, ...props }) => {
           max={max}
           step={step}
           {...fieldMin}
+          onChange={(event) => fieldMin.onChange(+event.target.value)}
         />
         <input
           class="input"
@@ -40,6 +44,7 @@ const RangeSlider = ({ min, max, step, control, ...props }) => {
           max={max}
           step={step}
           {...fieldMax}
+          onChange={(event) => fieldMax.onChange(+event.target.value)}
         />
       </div>
 

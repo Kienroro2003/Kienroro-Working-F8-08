@@ -21,7 +21,7 @@ const Filter = () => {
     defaultValues: {
       price: { min: 0, max: 100 },
       brand: "",
-      size: "",
+      weight: "",
     },
   });
   const onSubmit = (data) => {
@@ -105,7 +105,11 @@ const Filter = () => {
               </label>
               <div class="filter__form-group">
                 <div class="filter__form-select-wrap">
-                  <FilterSelect></FilterSelect>
+                  <FilterSelect
+                    control={control}
+                    setValue={setValue}
+                    name={"weight"}
+                  ></FilterSelect>
                   <div class="filter__form-select">
                     Gram
                     <img
