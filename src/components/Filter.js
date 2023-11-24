@@ -7,9 +7,18 @@ import InputNumberFilter from "./input/InputNumberFilter";
 import FilterSelect from "./select-input/FilterSelect";
 import { WeightUnitProvider } from "../contexts/weightUnit-context";
 
+const moveToElement = (elementCoord) => {
+  // const blue = document.getElementById('blue');
+  let position = elementCoord.getBoundingClientRect();
+  // scrolls to 20px above element
+  window.scrollTo(position.left, position.top + window.scrollY - 200);
+};
+
 const Filter = () => {
   const { show, nodeRef, setShow } = useClickOutSide();
-  const handleClickFilter = () => {
+  const handleClickFilter = (e) => {
+    console.log(e.target.get);
+    moveToElement(e.target);
     setShow(!show);
   };
   const {
