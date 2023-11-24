@@ -18,7 +18,6 @@ const RangeSlider = ({ min, max, step, control, ...props }) => {
   });
   const { value: valuesMax } = fieldMax;
   const { value: valueMin } = fieldMin;
-  console.log("🚀 ~ file: RangeSlider.js:25 ~ fieldMin:", valuesMax);
 
   const minPos = ((valuesMax - min) / (max - min)) * 100;
   const maxPos = ((valueMin - min) / (max - min)) * 100;

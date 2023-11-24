@@ -44,7 +44,7 @@ Portal.propTypes = {
   containerStyle: PropTypes.object,
   bodyStyle: PropTypes.object,
   onClose: PropTypes.func,
-  visible: PropTypes.bool.isRequired,
+  visible: PropTypes.bool,
   children: PropTypes.node,
 };
 

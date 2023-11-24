@@ -3,3 +3,4 @@
 - thêm validate cho filter
 - thêm slider cho hero, product, ...
 - fix price in filter
+- fix Slider Range : không được kéo max < min

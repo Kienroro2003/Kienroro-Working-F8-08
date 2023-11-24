@@ -7,7 +7,6 @@ import { useGallery } from "../contexts/gallery-context";
 
 const Home = () => {
   const { listItem } = useGallery();
-  console.log("🚀 ~ file: Home.js:10 ~ Home ~ listProduct:", listItem);
   return (
     <div className="home">
       <div className="container">

@@ -9,6 +9,8 @@ import useClickOutSide from "../hooks/useClickOutSide";
 import { useAuth } from "../utils/authProvider";
 import { useGallery } from "../contexts/gallery-context";
 import { useEffect, useRef, useState } from "react";
+import useWindowDimensions from "../hooks/useWindowDimensions";
+import Portal from "../utils/Portal";
 const data = require("../services/api/dataDropdown.json");
 
 function debounceFn(func, wait = 20, immediate = true) {
@@ -54,9 +56,28 @@ const Header = () => {
       document.body.style.paddingTop = 0;
     }
   };
+  const windowDimensions = useWindowDimensions();
+
+  const PortalNavbar = () => {
+    if (windowDimensions.width > 1200) return <Navbar></Navbar>;
+    return (
+      showDropdown && (
+        <Portal onClose={() => setShowDropdown(false)}>
+          <Navbar
+            data={data}
+            className="header__navbar "
+            show={showDropdown}
+            setShow={setShowDropdown}
+            nodeRef={dropdownRef}
+          ></Navbar>
+        </Portal>
+      )
+    );
+  };
 
   // add/remove scroll event listener
   useEffect(() => {
+    console.log(windowDimensions);
     var header = headerRef.current.getBoundingClientRect();
     const handleScrollEvent = () => {
       handleScroll(header.top, header.height);
@@ -65,7 +86,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", debounceFn(handleScrollEvent, 300));
     };
-  }, []);
+  }, [windowDimensions]);
   return (
     <header
       className={`header navbar${sticky ? " sticky" : ""}`}
@@ -81,14 +102,15 @@ const Header = () => {
             <More className="pointer-events-none icon"></More>
           </button>
           <Logo></Logo>
-          <Navbar
+          {/* <Navbar
             data={data}
             className="header__navbar "
             show={showDropdown}
             setShow={setShowDropdown}
             nodeRef={dropdownRef}
             // d-xl-none
-          ></Navbar>
+          ></Navbar> */}
+          <PortalNavbar></PortalNavbar>
           <div className=" top-act">
             <form
               className="top-act__form top-act__group d-md-none"
