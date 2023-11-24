@@ -23,13 +23,20 @@ const Portal = ({
     <div
       className={`fixed inset-0 z-[9999] ${containerClassName}`}
       style={containerStyle}
+      onClick={() => {
+        console.log("click2");
+        onClose();
+      }}
     >
       <div
-        className="absolute inset-0 bg-black overlay bg-opacity-20"
-        onClick={onClose}
+        className="absolute inset-0 z-[99998] bg-black overlay bg-opacity-20"
+        onClick={() => {
+          console.log("click");
+          console.log(onClose);
+        }}
       ></div>
       <div
-        className={`content relative z-10 ${bodyClassName}`}
+        className={`content relative z-[99999] ${bodyClassName}`}
         style={bodyStyle}
       >
         {children}
@@ -44,7 +51,7 @@ Portal.propTypes = {
   containerStyle: PropTypes.object,
   bodyStyle: PropTypes.object,
   onClose: PropTypes.func,
-  visible: PropTypes.bool,
+  visible: PropTypes.bool.isRequired,
   children: PropTypes.node,
 };
 

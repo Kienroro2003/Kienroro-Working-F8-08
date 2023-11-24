@@ -18,15 +18,16 @@
     margin-left: 129px;
     @include abstracts.screen(xl) {
       margin: 0;
-      position: fixed;
-      top: 0;
-      left: 0;
+      background-color: #fff;
+      padding: 30px;
       height: 100vh;
       width: 50%;
-      background-color: #fff;
-      z-index: 99;
-      padding: 30px;
-      translate: -100%;
+      // position: fixed;
+      // top: 0;
+      // left: 0;
+      // z-index: 99;
+      // translate: -100%;
+      // transition: all 1s linear;
     }
   }
 }

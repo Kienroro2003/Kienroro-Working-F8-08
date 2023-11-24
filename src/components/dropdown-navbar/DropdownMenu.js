@@ -7,10 +7,11 @@ const DropdownMenu = (props) => {
       <div className="dropdown-menu__container">
         <ul className="dropdown-menu">
           {props.data &&
-            props.data.map((item) => {
+            props.data.map((item, index) => {
               return (
                 <Fragment>
                   <li
+                    key={index}
                     className={`flex gap-4 dropdown-menu__item ${
                       item.id === 1 ? "main" : ""
                     }`}

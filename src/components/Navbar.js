@@ -1,16 +1,12 @@
 import React from "react";
 
-import DropdownMenu from "./DropdownMenu";
+import DropdownMenu from "./dropdown-navbar/DropdownMenu";
 import { ReactComponent as ArrowDown } from "../assets/icons/arrow-down.svg";
 
-const Navbar = ({ show, setShow, nodeRef, ...props }) => {
+const Navbar = ({ ...props }) => {
   return (
     <>
-      <nav
-        className={`${props.className} navbar`}
-        style={show ? { translate: "0" } : {}}
-        ref={nodeRef}
-      >
+      <nav className={`${props.className} navbar`}>
         <ul className="navbar__list">
           {props.data &&
             props.data.map((item) => {
@@ -28,12 +24,12 @@ const Navbar = ({ show, setShow, nodeRef, ...props }) => {
             })}
         </ul>
       </nav>
-      {show && (
+      {/* {show && (
         <div
           className="fixed inset-0 z-10 bg-slate-950/30"
           onClick={() => setShow((showDropdown) => !showDropdown)}
         ></div>
-      )}
+      )} */}
     </>
   );
 };

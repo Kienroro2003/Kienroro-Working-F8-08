@@ -11,6 +11,7 @@ import { useGallery } from "../contexts/gallery-context";
 import { useEffect, useRef, useState } from "react";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import Portal from "../utils/Portal";
+import DropdownBase from "./dropdown-navbar/DropdownBase";
 const data = require("../services/api/dataDropdown.json");
 
 function debounceFn(func, wait = 20, immediate = true) {
@@ -34,11 +35,7 @@ const Header = () => {
   const { listItem } = useGallery();
   const amountFavorites = listItem.filter((item) => item.isFavorite).length;
   const { nodeRef, show, setShow } = useClickOutSide();
-  const {
-    nodeRef: dropdownRef,
-    show: showDropdown,
-    setShow: setShowDropdown,
-  } = useClickOutSide();
+  const [showDropdown, setShowDropdown] = useState(false);
   const handleShowInput = (e) => {
     if (!show) e.preventDefault();
     setShow(!show);
@@ -59,19 +56,12 @@ const Header = () => {
   const windowDimensions = useWindowDimensions();
 
   const PortalNavbar = () => {
-    if (windowDimensions.width > 1200) return <Navbar></Navbar>;
+    if (windowDimensions.width > 1200)
+      return <Navbar data={data} className="header__navbar "></Navbar>;
     return (
-      showDropdown && (
-        <Portal onClose={() => setShowDropdown(false)}>
-          <Navbar
-            data={data}
-            className="header__navbar "
-            show={showDropdown}
-            setShow={setShowDropdown}
-            nodeRef={dropdownRef}
-          ></Navbar>
-        </Portal>
-      )
+      <DropdownBase show={showDropdown} onClose={() => setShowDropdown(false)}>
+        <Navbar data={data} className="header__navbar"></Navbar>
+      </DropdownBase>
     );
   };
 
@@ -110,7 +100,16 @@ const Header = () => {
             nodeRef={dropdownRef}
             // d-xl-none
           ></Navbar> */}
-          <PortalNavbar></PortalNavbar>
+          {windowDimensions.width > 1200 ? (
+            <Navbar data={data} className="header__navbar "></Navbar>
+          ) : (
+            <DropdownBase
+              show={showDropdown}
+              onClose={() => setShowDropdown(false)}
+            >
+              <Navbar data={data} className="header__navbar"></Navbar>
+            </DropdownBase>
+          )}
           <div className=" top-act">
             <form
               className="top-act__form top-act__group d-md-none"
