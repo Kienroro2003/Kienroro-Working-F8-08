@@ -107,7 +107,11 @@ const Header = () => {
               show={showDropdown}
               onClose={() => setShowDropdown(false)}
             >
-              <Navbar data={data} className="header__navbar"></Navbar>
+              <Navbar
+                data={data}
+                onClose={() => setShowDropdown(false)}
+                className="header__navbar"
+              ></Navbar>
             </DropdownBase>
           )}
           <div className=" top-act">

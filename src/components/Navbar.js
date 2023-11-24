@@ -1,12 +1,18 @@
 import React from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropdownMenu from "./dropdown-navbar/DropdownMenu";
 import { ReactComponent as ArrowDown } from "../assets/icons/arrow-down.svg";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = ({ ...props }) => {
+const Navbar = ({ onClose, ...props }) => {
   return (
     <>
       <nav className={`${props.className} navbar`}>
+        <FontAwesomeIcon
+          icon={faArrowLeft}
+          className="mr-auto text-3xl cursor-pointer d-none d-xl-block"
+          onClick={onClose}
+        />
         <ul className="navbar__list">
           {props.data &&
             props.data.map((item) => {

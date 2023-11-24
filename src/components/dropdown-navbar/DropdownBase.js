@@ -13,7 +13,6 @@ const DropdownBase = ({ show, onClose, children }) => {
             visible={state !== "exited"}
             onClose={onClose}
             bodyStyle={{ transition: "all 300ms linear" }}
-            bodyClassName={"block"}
           >
             {children}
           </Portal>

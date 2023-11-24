@@ -1,6 +1,11 @@
 @use "../abstracts";
 
 .navbar {
+  @include abstracts.screen(xl) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
   &__list {
     display: flex;
     align-items: center;
